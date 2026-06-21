@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "SoAtomic — Web. SEO. AI. Digital Operations." },
       { name: "description", content: "SoAtomic helps small businesses screen, build, care for, grow, and automate their digital presence. Clear, practical, human." },
       { name: "author", content: "SoAtomic" },
-      { property: "og:title", content: "SoAtomic — Digital presence, built from the atoms up." },
-      { property: "og:description", content: "Practical web design, SEO, AI workflows, and digital operations for small businesses." },
+      { property: "og:title", content: "SoAtomic — Web. SEO. AI. Digital Operations." },
+      { property: "og:description", content: "SoAtomic helps small businesses screen, build, care for, grow, and automate their digital presence. Clear, practical, human." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "SoAtomic — Web. SEO. AI. Digital Operations." },
+      { name: "twitter:description", content: "SoAtomic helps small businesses screen, build, care for, grow, and automate their digital presence. Clear, practical, human." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/33c9bff6-b93f-44d4-a6f9-9ee50c7726d0/id-preview-33be3720--9e69ef97-d8f2-491d-be3d-e53dec644c9a.lovable.app-1782079061071.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/33c9bff6-b93f-44d4-a6f9-9ee50c7726d0/id-preview-33be3720--9e69ef97-d8f2-491d-be3d-e53dec644c9a.lovable.app-1782079061071.png" },
     ],
     links: [
       {
