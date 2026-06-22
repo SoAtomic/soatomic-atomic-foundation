@@ -164,6 +164,25 @@
   }
 }
 
+@utility font-mono-soa {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0;
+}
+
+@utility dot-grid-bg {
+  background-image: radial-gradient(color-mix(in oklab, var(--primary) 35%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility orbit-ring {
+  border: 1px dashed color-mix(in oklab, var(--primary) 35%, transparent);
+  border-radius: 9999px;
+}
+
+@utility ticker-mask {
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
 @utility squircle {
   border-radius: 28px;
 }
@@ -189,7 +208,12 @@
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 @keyframes pulse-soft { 0%,100% { opacity: .6; } 50% { opacity: 1; } }
 @keyframes float-y { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
+@keyframes ticker { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+@keyframes orbit-spin-rev { to { transform: rotate(-360deg); } }
 
 @utility animate-orbit { animation: orbit-spin 24s linear infinite; }
+@utility animate-orbit-slow { animation: orbit-spin 60s linear infinite; }
+@utility animate-orbit-rev { animation: orbit-spin-rev 40s linear infinite; }
 @utility animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
 @utility animate-float { animation: float-y 6s ease-in-out infinite; }
+@utility animate-ticker { animation: ticker 40s linear infinite; }

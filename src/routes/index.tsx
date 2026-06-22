@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
-  AlertTriangle, KeyRound, Compass, Check, Mail,
+  AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -29,7 +29,9 @@ function Index() {
       <Toaster theme="dark" />
       <Nav />
       <Hero />
+      <Ticker />
       <Problem />
+      <Manifesto />
       <Services />
       <BuildSizes />
       <Why />
@@ -75,11 +77,14 @@ function Nav() {
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
           <AtomMark />
-          <span className="font-semibold tracking-tight">So<span className="text-primary">Atomic</span></span>
+          <span className="font-semibold tracking-tight text-base">
+            So<span className="text-primary">Atomic</span>
+            <span className="ml-2 font-mono-soa text-[10px] text-muted-foreground align-middle">/ SCZ·CA</span>
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">{l.label}</a>
+            <a key={l.href} href={l.href} className="hover:text-foreground transition-colors font-mono-soa text-xs uppercase tracking-widest">{l.label}</a>
           ))}
         </nav>
         <a href="#contact">
@@ -99,29 +104,36 @@ function Hero() {
         style={{ background: "var(--gradient-hero)" }}
         aria-hidden
       />
-      {/* faint grid */}
+      {/* dot field */}
       <div
-        className="absolute inset-0 -z-10 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--color-foreground) 1px, transparent 1px), linear-gradient(90deg, var(--color-foreground) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
-        }}
+        className="absolute inset-0 -z-10 dot-grid-bg opacity-[0.25]"
+        style={{ maskImage: "radial-gradient(ellipse at 70% 30%, black 30%, transparent 70%)" }}
         aria-hidden
       />
+      {/* huge orbit ghost */}
+      <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 w-[680px] h-[680px] orbit-ring opacity-40" />
+      <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 w-[440px] h-[440px] orbit-ring opacity-30" />
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground">
+          <div className="inline-flex items-center gap-3 rounded-full border border-border bg-card/60 px-3 py-1 font-mono-soa text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-soft" />
-            Santa Cruz · Web · SEO · AI · Ops
-          </span>
-          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.05] text-gradient">
-            Digital presence, built from the atoms up.
+            <span>EST · Santa Cruz, CA</span>
+            <span className="text-border">/</span>
+            <span className="text-primary">Atomic №01</span>
+          </div>
+          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.02] text-gradient">
+            Small business websites,<br />
+            <span className="relative inline-block">
+              built from the
+              <span className="text-primary"> atoms </span>
+              up.
+            </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            SoAtomic helps small businesses clean up their websites, improve search visibility,
-            manage the digital plumbing, and use AI without losing their human voice.
+            Not a DIY template. Not a bloated agency. SoAtomic screens, builds,
+            cares for, grows, and automates the digital presence of small
+            businesses that need clarity — and want to actually understand their
+            own website.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#contact">
@@ -134,6 +146,18 @@ function Hero() {
                 View Services
               </Button>
             </a>
+          </div>
+          <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
+            {[
+              { k: "01", v: "Screen" },
+              { k: "02", v: "Build" },
+              { k: "03", v: "Grow" },
+            ].map(s => (
+              <div key={s.k} className="border-l border-border pl-3">
+                <div className="font-mono-soa text-[10px] text-primary">{s.k}</div>
+                <div className="text-sm font-semibold">{s.v}</div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="md:col-span-5">
@@ -155,13 +179,21 @@ function HeroOrbit() {
     <div className="relative mx-auto aspect-square w-full max-w-md">
       <div className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 60%)" }} />
       {/* orbits */}
-      <div className="absolute inset-6 rounded-full border border-border/80" />
-      <div className="absolute inset-14 rounded-full border border-border/60" />
-      <div className="absolute inset-24 rounded-full border border-border/40" />
+      <div className="absolute inset-2 orbit-ring opacity-60" />
+      <div className="absolute inset-10 rounded-full border border-border/70" />
+      <div className="absolute inset-20 orbit-ring opacity-40" />
+      {/* coord ticks */}
+      {["N","E","S","W"].map((d, i) => (
+        <div key={d} className="absolute inset-0 font-mono-soa text-[10px] text-muted-foreground/60"
+          style={{ transform: `rotate(${i*90}deg)` }}>
+          <span className="absolute left-1/2 -translate-x-1/2 top-0">{d}</span>
+        </div>
+      ))}
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
-        <div className="relative h-24 w-24 squircle bg-card glow-ring grid place-items-center">
-          <AtomMark className="h-10 w-10" />
+        <div className="relative h-28 w-28 squircle bg-card glow-ring grid place-items-center">
+          <AtomMark className="h-12 w-12" />
+          <div className="absolute -bottom-2 right-2 font-mono-soa text-[9px] px-1.5 py-0.5 rounded bg-background border border-border text-primary">Sa</div>
         </div>
       </div>
       {/* nodes */}
@@ -177,14 +209,103 @@ function HeroOrbit() {
               className="absolute -translate-x-1/2 -translate-y-1/2"
               style={{ left: `${x}%`, top: `${y}%` }}
             >
-              <div className="rounded-full bg-card border border-border px-3 py-1 text-xs font-medium animate-float" style={{ animationDelay: `${n.angle / 90}s` }}>
-                <span className="text-primary">●</span> {n.label}
+              <div className="rounded-full bg-card border border-border px-3 py-1 text-xs font-medium animate-float shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-background)_60%,transparent)]" style={{ animationDelay: `${n.angle / 90}s` }}>
+                <span className="text-primary mr-1">●</span>
+                <span className="font-mono-soa">{n.label}</span>
               </div>
             </div>
           );
         })}
       </div>
+      {/* outer ticker dots */}
+      <div aria-hidden className="absolute inset-0 animate-orbit-rev">
+        {[30,75,150,210,300,330].map(a => {
+          const rad = (a*Math.PI)/180;
+          const x = 50 + 49*Math.cos(rad);
+          const y = 50 + 49*Math.sin(rad);
+          return <span key={a} className="absolute h-1.5 w-1.5 rounded-full bg-primary/70" style={{left:`${x}%`,top:`${y}%`,transform:"translate(-50%,-50%)"}}/>
+        })}
+      </div>
     </div>
+  );
+}
+
+/* ---------- Ticker ---------- */
+function Ticker() {
+  const items = [
+    "ATOMIC SCREEN", "•", "WEB DESIGN", "•", "SEO", "•", "AI WORKFLOWS",
+    "•", "DIGITAL OPS", "•", "DNS / SSL", "•", "GOOGLE BUSINESS", "•",
+    "ANALYTICS", "•", "AUTOMATION", "•", "PLAIN ENGLISH", "•", "NO BLOAT",
+  ];
+  const row = [...items, ...items];
+  return (
+    <div className="border-y border-border/60 bg-card/30 py-4 overflow-hidden ticker-mask">
+      <div className="flex gap-10 w-max animate-ticker font-mono-soa text-xs tracking-[0.2em] text-muted-foreground">
+        {row.map((t, i) => (
+          <span key={i} className={t === "•" ? "text-primary" : ""}>{t}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Manifesto ---------- */
+function Manifesto() {
+  const yes = [
+    "Portable systems you actually own",
+    "Plain-English recommendations",
+    "Web + SEO + AI + Ops in one place",
+    "Small, sharp, accountable scope",
+  ];
+  const no = [
+    "10-person Slack channels for a headline change",
+    "Mystery platforms you can't escape",
+    "SEO theater and AI sparkle without a plan",
+    "Quarterly retainers for monthly silence",
+  ];
+  return (
+    <section className="py-24 border-t border-border/60 relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 dot-grid-bg opacity-[0.18]" style={{maskImage:"linear-gradient(180deg, transparent, black, transparent)"}}/>
+      <div className="mx-auto max-w-6xl px-6 relative">
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <div>
+            <div className="font-mono-soa text-[10px] uppercase tracking-[0.25em] text-primary">/ Manifesto · v1.0</div>
+            <h2 className="mt-3 text-3xl md:text-5xl font-semibold text-gradient max-w-3xl leading-[1.05]">
+              Anti-bloat. Pro-clarity. Built for the people who actually run the business.
+            </h2>
+          </div>
+          <div className="font-mono-soa text-xs text-muted-foreground">§ 02 / 09</div>
+        </div>
+        <div className="mt-12 grid md:grid-cols-2 gap-5">
+          <div className="atomic-card p-7">
+            <div className="flex items-center gap-2 font-mono-soa text-[10px] uppercase tracking-widest text-primary">
+              <Check className="h-3.5 w-3.5"/> What SoAtomic is
+            </div>
+            <ul className="mt-5 space-y-3">
+              {yes.map(t => (
+                <li key={t} className="flex items-start gap-3 text-sm md:text-base">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"/>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="atomic-card p-7">
+            <div className="flex items-center gap-2 font-mono-soa text-[10px] uppercase tracking-widest text-muted-foreground">
+              <X className="h-3.5 w-3.5"/> What it isn't
+            </div>
+            <ul className="mt-5 space-y-3">
+              {no.map(t => (
+                <li key={t} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground line-through decoration-border decoration-1">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-border shrink-0"/>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -192,7 +313,12 @@ function HeroOrbit() {
 function SectionHeader({ eyebrow, title, sub }: { eyebrow?: string; title: string; sub?: string }) {
   return (
     <div className="max-w-2xl">
-      {eyebrow && <div className="text-xs uppercase tracking-[0.18em] text-primary font-semibold">{eyebrow}</div>}
+      {eyebrow && (
+        <div className="font-mono-soa text-[10px] uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
+          <span className="h-1 w-1 rounded-full bg-primary"/>
+          / {eyebrow}
+        </div>
+      )}
       <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-gradient">{title}</h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
     </div>
@@ -233,40 +359,43 @@ function Problem() {
 /* ---------- Services ---------- */
 function Services() {
   const services = [
-    { icon: Search, key: "Screen", title: "Atomic Screen",
+    { icon: Search, sym: "Sc", key: "Screen", title: "Atomic Screen",
       body: "A plain-English review of your website, SEO, domain/DNS, SSL, Google presence, social presence, and AI opportunities. You get a prioritized action plan." },
-    { icon: Hammer, key: "Build", title: "Atomic Build",
+    { icon: Hammer, sym: "Bd", key: "Build", title: "Atomic Build",
       body: "Websites, landing pages, brand assets, and lightweight digital systems sized from S to XXL as your needs grow." },
-    { icon: HeartPulse, key: "Care", title: "Atomic Care",
+    { icon: HeartPulse, sym: "Cr", key: "Care", title: "Atomic Care",
       body: "Ongoing support for updates, digital operations, DNS/SSL coordination, Google Workspace, analytics, backups, and small fixes." },
-    { icon: TrendingUp, key: "Grow", title: "Atomic Grow",
+    { icon: TrendingUp, sym: "Gr", key: "Grow", title: "Atomic Grow",
       body: "SEO, Google Business Profile, content planning, service pages, campaigns, reviews, and social presence support." },
-    { icon: Bot, key: "Automate", title: "Atomic Automate",
+    { icon: Bot, sym: "Au", key: "Automate", title: "Atomic Automate",
       body: "Practical AI workflows, prompt kits, customer response templates, content systems, and lightweight automation." },
   ];
   return (
     <section id="services" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader eyebrow="Service ladder" title="Start with clarity. Then build what matters." />
+        <SectionHeader eyebrow="Service ladder · 05 elements" title="Start with clarity. Then build what matters." />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
             <div key={s.key} className={`atomic-card p-7 relative overflow-hidden ${i === 0 ? "lg:row-span-2" : ""}`}>
-              <div className="flex items-center gap-3">
-                <div className="h-11 w-11 squircle bg-background grid place-items-center text-primary glow-ring">
-                  <s.icon className="h-5 w-5" />
+              {/* periodic-tile symbol */}
+              <div className="flex items-start justify-between">
+                <div className="h-16 w-16 squircle bg-background grid place-items-center text-primary glow-ring relative">
+                  <span className="font-mono-soa text-[9px] absolute top-1 left-2 text-muted-foreground">0{i+1}</span>
+                  <span className="text-2xl font-semibold">{s.sym}</span>
                 </div>
-                <span className="text-xs uppercase tracking-widest text-muted-foreground">0{i + 1}</span>
+                <s.icon className="h-5 w-5 text-primary/70" />
               </div>
               <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               {i === 0 && (
-                <div className="mt-6 inline-flex items-center gap-2 text-sm text-primary font-medium">
-                  Recommended starting point <ArrowRight className="h-4 w-4" />
-                </div>
+                <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm text-primary font-medium font-mono-soa uppercase tracking-widest text-xs">
+                  Start here <ArrowRight className="h-4 w-4" />
+                </a>
               )}
               {/* corner dot motif */}
-              <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 rounded-full border border-border/60" />
+              <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 orbit-ring opacity-50" />
               <div className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 rounded-full border border-border/40" />
+              <div className="pointer-events-none absolute right-3 top-3 font-mono-soa text-[9px] text-muted-foreground/70">/ {s.key.toLowerCase()}.soa</div>
             </div>
           ))}
         </div>
@@ -290,14 +419,15 @@ function BuildSizes() {
         <SectionHeader eyebrow="Atomic Build" title="Builds sized to the job." />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {sizes.map((s, i) => (
-            <div key={s.size} className="atomic-card p-6 flex flex-col">
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-semibold text-primary">{s.size}</span>
-                <span className="text-xs text-muted-foreground">/ tier 0{i + 1}</span>
+            <div key={s.size} className="atomic-card p-6 flex flex-col relative overflow-hidden group hover:border-primary/40 transition-colors">
+              <div className="flex items-baseline justify-between">
+                <span className="text-4xl font-semibold text-primary">{s.size}</span>
+                <span className="font-mono-soa text-[10px] text-muted-foreground">t.0{i + 1}</span>
               </div>
               <div className="mt-4 h-px w-full bg-border" />
               <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
+              <div className="pointer-events-none absolute -right-8 -bottom-8 h-24 w-24 rounded-full border border-border/40 group-hover:border-primary/30 transition-colors"/>
             </div>
           ))}
         </div>
@@ -345,19 +475,23 @@ function Why() {
 /* ---------- Process ---------- */
 function Process() {
   const steps = [
-    { n: "01", title: "Screen", body: "We review what exists and identify what matters." },
-    { n: "02", title: "Plan", body: "You get a practical roadmap, not a buzzword pile." },
-    { n: "03", title: "Build · Care · Grow · Automate", body: "We fix, maintain, improve, or automate the right pieces." },
+    { n: "01", title: "Screen", body: "We review what exists and identify what matters. No assumptions, no jargon walls." },
+    { n: "02", title: "Plan", body: "You get a practical roadmap with priorities — not a 40-page deck no one opens." },
+    { n: "03", title: "Build · Care · Grow · Automate", body: "We fix, maintain, improve, or automate the right pieces. You always own the keys." },
   ];
   return (
     <section id="process" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader eyebrow="Process" title="How it works" />
+        <SectionHeader eyebrow="Process · 03 stages" title="How it works." />
         <div className="mt-12 grid md:grid-cols-3 gap-5 relative">
           {steps.map((s) => (
-            <div key={s.n} className="atomic-card p-7 relative">
-              <div className="text-primary text-sm font-mono">{s.n}</div>
-              <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
+            <div key={s.n} className="atomic-card p-7 relative overflow-hidden">
+              <div className="flex items-center gap-3">
+                <span className="font-mono-soa text-primary text-sm">{s.n}</span>
+                <span className="h-px flex-1 bg-border"/>
+                <span className="h-2 w-2 rounded-full bg-primary animate-pulse-soft"/>
+              </div>
+              <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground">{s.body}</p>
             </div>
           ))}
@@ -371,12 +505,15 @@ function Process() {
 function Founder() {
   return (
     <section className="py-24 border-t border-border/60">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <div className="mx-auto h-14 w-14 squircle bg-card glow-ring grid place-items-center">
-          <AtomMark className="h-7 w-7" />
+      <div className="mx-auto max-w-4xl px-6 text-center relative">
+        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] orbit-ring opacity-25"/>
+        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] orbit-ring opacity-20"/>
+        <div className="mx-auto h-16 w-16 squircle bg-card glow-ring grid place-items-center relative">
+          <AtomMark className="h-8 w-8" />
         </div>
-        <h2 className="mt-6 text-3xl md:text-4xl font-semibold text-gradient">
-          A practical digital partner, not another black box.
+        <div className="mt-4 font-mono-soa text-[10px] uppercase tracking-[0.25em] text-primary">/ Founder note</div>
+        <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-gradient">
+          A practical digital partner. Not another black box.
         </h2>
         <p className="mt-6 text-lg text-muted-foreground">
           SoAtomic was created by a former web designer and infrastructure professional who has seen both sides:
