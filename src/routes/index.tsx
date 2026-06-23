@@ -114,9 +114,9 @@ function Hero() {
       <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 w-[440px] h-[440px] orbit-ring opacity-30" />
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
-          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.15]">
-            Small business websites,<br />
-            built from the <span className="text-accent-yellow">atoms</span> up.
+          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
+            Small Business Websites,<br />
+            Built From The <span className="text-accent-yellow">Atoms</span> Up.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Not a DIY template. Not a bloated agency. SoAtomic screens, builds,
