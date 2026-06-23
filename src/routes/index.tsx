@@ -484,7 +484,7 @@ function Founder() {
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-dashed border-primary/35 opacity-25"/>
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary/35 opacity-20"/>
         <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
-          <AtomMark className="h-8 w-8" />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-12 w-12 object-contain" />
         </div>
         <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
           A practical digital partner. Not another black box.
