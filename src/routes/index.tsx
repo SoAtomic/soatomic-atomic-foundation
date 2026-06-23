@@ -143,7 +143,6 @@ function Hero() {
               { k: "03", v: "Grow" },
             ].map(s => (
               <div key={s.k} className="border-l border-border pl-3">
-                <div className="font-mono-soa text-[10px] text-primary">{s.k}</div>
                 <div className="text-sm font-semibold">{s.v}</div>
               </div>
             ))}
