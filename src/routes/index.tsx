@@ -10,6 +10,7 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
+import mascotAsset from "@/assets/star-mascot.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
