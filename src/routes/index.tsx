@@ -114,13 +114,7 @@ function Hero() {
       <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 w-[440px] h-[440px] orbit-ring opacity-30" />
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
-          <div className="inline-flex items-center gap-3 rounded-full border border-border bg-card/60 px-3 py-1 font-mono-soa text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent-yellow animate-pulse-soft" />
-            <span>EST · Santa Cruz, CA</span>
-            <span className="text-border">/</span>
-            <span className="text-accent-orange">Atomic №01</span>
-          </div>
-          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
+          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
             Small business websites,<br />
             built from the <span className="text-primary">atoms</span> up.
           </h1>
@@ -264,12 +258,10 @@ function Manifesto() {
       <div className="mx-auto max-w-6xl px-6 relative">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <div className="font-mono-soa text-[10px] uppercase tracking-[0.25em] text-primary">/ Manifesto · v1.0</div>
-            <h2 className="mt-3 text-3xl md:text-5xl font-semibold text-gradient max-w-3xl leading-[1.05]">
+            <h2 className="text-3xl md:text-5xl font-semibold text-gradient max-w-3xl leading-[1.05]">
               Anti-bloat. Pro-clarity. Built for the people who actually run the business.
             </h2>
           </div>
-          <div className="font-mono-soa text-xs text-muted-foreground">§ 02 / 09</div>
         </div>
         <div className="mt-12 grid md:grid-cols-2 gap-5">
           <div className="atomic-card p-7">
@@ -279,7 +271,7 @@ function Manifesto() {
             <ul className="mt-5 space-y-3">
               {yes.map(t => (
                 <li key={t} className="flex items-start gap-3 text-sm md:text-base">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0"/>
+                  <span className="mt-1.5 h-1.5 w-1.5 bg-primary shrink-0"/>
                   <span>{t}</span>
                 </li>
               ))}
@@ -292,7 +284,7 @@ function Manifesto() {
             <ul className="mt-5 space-y-3">
               {no.map(t => (
                 <li key={t} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground line-through decoration-border decoration-1">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-border shrink-0"/>
+                  <span className="mt-1.5 h-1.5 w-1.5 bg-border shrink-0"/>
                   <span>{t}</span>
                 </li>
               ))}
@@ -308,13 +300,7 @@ function Manifesto() {
 function SectionHeader({ eyebrow, title, sub }: { eyebrow?: string; title: string; sub?: string }) {
   return (
     <div className="max-w-2xl">
-      {eyebrow && (
-        <div className="font-mono-soa text-[10px] uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
-          <span className="h-1 w-1 rounded-full bg-primary"/>
-          / {eyebrow}
-        </div>
-      )}
-      <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-gradient">{title}</h2>
+      <h2 className="text-3xl md:text-4xl font-semibold text-gradient">{title}</h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
     </div>
   );
@@ -338,7 +324,7 @@ function Problem() {
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {pains.map(p => (
             <div key={p.title} className="atomic-card p-6">
-              <div className="h-10 w-10 squircle bg-background grid place-items-center text-primary">
+              <div className="h-10 w-10 bg-background grid place-items-center text-primary">
                 <p.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 text-lg font-semibold">{p.title}</h3>
@@ -374,8 +360,7 @@ function Services() {
             <div key={s.key} className={`atomic-card p-7 relative overflow-hidden ${i === 0 ? "lg:row-span-2" : ""}`}>
               {/* periodic-tile symbol */}
               <div className="flex items-start justify-between">
-                <div className="h-16 w-16 squircle bg-background grid place-items-center text-primary glow-ring relative">
-                  <span className="font-mono-soa text-[9px] absolute top-1 left-2 text-muted-foreground">0{i+1}</span>
+                <div className="h-16 w-16 bg-background grid place-items-center text-primary glow-ring relative">
                   <span className="text-2xl font-semibold">{s.sym}</span>
                 </div>
                 <s.icon className="h-5 w-5 text-primary/70" />
@@ -388,9 +373,8 @@ function Services() {
                 </a>
               )}
               {/* corner dot motif */}
-              <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 orbit-ring opacity-50" />
-              <div className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 rounded-full border border-border/40" />
-              <div className="pointer-events-none absolute right-3 top-3 font-mono-soa text-[9px] text-muted-foreground/70">/ {s.key.toLowerCase()}.soa</div>
+              <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 border border-dashed border-primary/35 opacity-50" />
+              <div className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 border border-border/40" />
             </div>
           ))}
         </div>
@@ -417,12 +401,11 @@ function BuildSizes() {
             <div key={s.size} className="atomic-card p-6 flex flex-col relative overflow-hidden group hover:border-primary/40 transition-colors">
               <div className="flex items-baseline justify-between">
                 <span className="text-4xl font-semibold text-primary">{s.size}</span>
-                <span className="font-mono-soa text-[10px] text-muted-foreground">t.0{i + 1}</span>
               </div>
               <div className="mt-4 h-px w-full bg-border" />
               <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
-              <div className="pointer-events-none absolute -right-8 -bottom-8 h-24 w-24 rounded-full border border-border/40 group-hover:border-primary/30 transition-colors"/>
+              <div className="pointer-events-none absolute -right-8 -bottom-8 h-24 w-24 border border-border/40 group-hover:border-primary/30 transition-colors"/>
             </div>
           ))}
         </div>
@@ -455,7 +438,7 @@ function Why() {
         <ul className="space-y-3">
           {items.map(t => (
             <li key={t} className="atomic-card flex items-center gap-4 p-4">
-              <span className="h-8 w-8 squircle bg-background grid place-items-center text-primary">
+              <span className="h-8 w-8 bg-background grid place-items-center text-primary">
                 <Check className="h-4 w-4" />
               </span>
               <span className="text-sm md:text-base">{t}</span>
@@ -484,7 +467,7 @@ function Process() {
               <div className="flex items-center gap-3">
                 <span className="font-mono-soa text-primary text-sm">{s.n}</span>
                 <span className="h-px flex-1 bg-border"/>
-                <span className="h-2 w-2 rounded-full bg-primary animate-pulse-soft"/>
+                <span className="h-2 w-2 bg-primary animate-pulse-soft"/>
               </div>
               <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground">{s.body}</p>
@@ -501,13 +484,12 @@ function Founder() {
   return (
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-4xl px-6 text-center relative">
-        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] orbit-ring opacity-25"/>
-        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] orbit-ring opacity-20"/>
-        <div className="mx-auto h-16 w-16 squircle bg-card glow-ring grid place-items-center relative">
+        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-dashed border-primary/35 opacity-25"/>
+        <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary/35 opacity-20"/>
+        <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
           <AtomMark className="h-8 w-8" />
         </div>
-        <div className="mt-4 font-mono-soa text-[10px] uppercase tracking-[0.25em] text-primary">/ Founder note</div>
-        <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-gradient">
+        <h2 className="mt-6 text-3xl md:text-4xl font-semibold text-gradient">
           A practical digital partner. Not another black box.
         </h2>
         <p className="mt-6 text-lg text-muted-foreground">
@@ -537,7 +519,6 @@ function Contact() {
       <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-2 gap-12">
         <div>
           <SectionHeader
-            eyebrow="Get started"
             title="Start with an Atomic Screen."
             sub="Get a clear view of what is working, what is broken, and what to fix first."
           />
