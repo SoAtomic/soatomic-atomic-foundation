@@ -203,6 +203,13 @@
   box-shadow: var(--shadow-glow);
 }
 
+@utility text-gradient-accent {
+  background: linear-gradient(135deg, #37b847 0%, #ff7200 50%, #ffff00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @utility text-gradient {
   background: linear-gradient(180deg, var(--color-foreground) 30%, color-mix(in oklab, var(--primary) 70%, var(--color-foreground)));
   -webkit-background-clip: text;
