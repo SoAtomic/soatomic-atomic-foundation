@@ -114,9 +114,9 @@ function Hero() {
       <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 w-[440px] h-[440px] orbit-ring opacity-30" />
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
-          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
+          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.15]">
             Small business websites,<br />
-            built from the <span className="text-primary">atoms</span> up.
+            built from the <span className="text-accent-yellow">atoms</span> up.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Not a DIY template. Not a bloated agency. SoAtomic screens, builds,
@@ -249,7 +249,7 @@ function Manifesto() {
       <div className="mx-auto max-w-6xl px-6 relative">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <h2 className="text-3xl md:text-5xl font-semibold text-gradient max-w-3xl leading-[1.05]">
+            <h2 className="text-3xl md:text-5xl font-semibold max-w-3xl leading-[1.05]">
               Anti-bloat. Pro-clarity. Built for the people who actually run the business.
             </h2>
           </div>
@@ -288,10 +288,10 @@ function Manifesto() {
 }
 
 /* ---------- Section helpers ---------- */
-function SectionHeader({ eyebrow, title, sub }: { eyebrow?: string; title: string; sub?: string }) {
+function SectionHeader({ title, sub, accent }: { title: string; sub?: string; accent?: boolean }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="text-3xl md:text-4xl font-semibold text-gradient">{title}</h2>
+      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""}`}>{title}</h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
     </div>
   );
@@ -308,7 +308,6 @@ function Problem() {
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
-          eyebrow="The problem"
           title="Tired of digital vendors that make everything harder?"
           sub="You should not need a ticket, three meetings, and a platform specialist just to understand your website, fix a headline, update a service page, or know who owns your domain."
         />
@@ -345,7 +344,7 @@ function Services() {
   return (
     <section id="services" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader eyebrow="Service ladder · 05 elements" title="Start with clarity. Then build what matters." />
+        <SectionHeader title="Start with clarity. Then build what matters." />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
             <div key={s.key} className={`atomic-card p-7 relative overflow-hidden ${i === 0 ? "lg:row-span-2" : ""}`}>
@@ -386,7 +385,7 @@ function BuildSizes() {
   return (
     <section id="sizes" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader eyebrow="Atomic Build" title="Builds sized to the job." />
+        <SectionHeader title="Builds sized to the job." />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {sizes.map((s, i) => (
             <div key={s.size} className="atomic-card p-6 flex flex-col relative overflow-hidden group hover:border-primary/40 transition-colors">
@@ -422,7 +421,6 @@ function Why() {
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-12 items-start">
         <SectionHeader
-          eyebrow="Why SoAtomic"
           title="Built for clarity, not captivity."
           sub="SoAtomic is for businesses that have outgrown DIY but do not need a bloated agency or a mystery platform."
         />
@@ -451,7 +449,7 @@ function Process() {
   return (
     <section id="process" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader eyebrow="Process · 03 stages" title="How it works." />
+        <SectionHeader title="How it works." />
         <div className="mt-12 grid md:grid-cols-3 gap-5 relative">
           {steps.map((s) => (
             <div key={s.n} className="atomic-card p-7 relative overflow-hidden">
@@ -480,7 +478,7 @@ function Founder() {
         <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
           <AtomMark className="h-8 w-8" />
         </div>
-        <h2 className="mt-6 text-3xl md:text-4xl font-semibold text-gradient">
+        <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
           A practical digital partner. Not another black box.
         </h2>
         <p className="mt-6 text-lg text-muted-foreground">
@@ -512,6 +510,7 @@ function Contact() {
           <SectionHeader
             title="Start with an Atomic Screen."
             sub="Get a clear view of what is working, what is broken, and what to fix first."
+            accent
           />
           <div className="mt-8 atomic-card p-6">
             <div className="flex items-center gap-3 text-sm text-muted-foreground">

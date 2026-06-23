@@ -168,6 +168,10 @@
     font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
     letter-spacing: -0.02em;
   }
+
+  h1 { color: #37b847; }
+  h2 { color: #ff7200; }
+  h3 { color: #ffff00; }
 }
 
 @utility font-mono-soa {
@@ -201,6 +205,13 @@
 
 @utility glow-ring {
   box-shadow: var(--shadow-glow);
+}
+
+@utility text-gradient-accent {
+  background: linear-gradient(135deg, #37b847 0%, #ff7200 50%, #ffff00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @utility text-gradient {
