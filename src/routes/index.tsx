@@ -77,7 +77,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <AtomMark />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-10 w-10 object-contain" />
           <span className="font-semibold tracking-tight text-base">
             So<span className="text-primary">Atomic</span>
           </span>
