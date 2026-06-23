@@ -123,11 +123,7 @@ function Hero() {
           </div>
           <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
             Small business websites,<br />
-            <span className="relative inline-block">
-              built from the
-              <span className="text-primary"> atoms </span>
-              up.
-            </span>
+            built from the <span className="text-primary">atoms</span> up.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Not a DIY template. Not a bloated agency. SoAtomic screens, builds,
