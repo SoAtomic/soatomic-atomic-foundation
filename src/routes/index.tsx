@@ -512,7 +512,7 @@ function Contact() {
           <SectionHeader
             title="Start with an Atomic Screen."
             sub="Get a clear view of what is working, what is broken, and what to fix first."
-            accent
+            green
           />
           <div className="mt-8 atomic-card p-6">
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
