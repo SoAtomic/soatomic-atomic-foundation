@@ -300,9 +300,9 @@ function SectionHeader({ title, sub, accent, white }: { title: string; sub?: str
 /* ---------- Problem ---------- */
 function Problem() {
   const pains = [
-    { icon: AlertTriangle, title: "Messy website", body: "Slow pages, broken layouts, copy that doesn't say what you do." },
-    { icon: KeyRound, title: "Unclear ownership", body: "No one knows who owns the domain, DNS, or the login that matters." },
-    { icon: Compass, title: "No practical plan", body: "Lots of advice, no priorities. Nothing actually ships." },
+    { icon: AlertTriangle, title: "Messy Website", body: "Slow pages, broken layouts, copy that doesn't say what you do." },
+    { icon: KeyRound, title: "Unclear Ownership", body: "No one knows who owns the domain, DNS, or the login that matters." },
+    { icon: Compass, title: "No Practical Plan", body: "Lots of advice, no priorities. Nothing actually ships." },
   ];
   return (
     <section className="py-24 border-t border-border/60">
@@ -315,10 +315,10 @@ function Problem() {
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {pains.map(p => (
             <div key={p.title} className="atomic-card p-6">
-              <div className="h-10 w-10 bg-background grid place-items-center text-primary">
+              <div className="h-10 w-10 bg-background grid place-items-center" style={{ color: "#ff4500", filter: "drop-shadow(0 0 5px rgba(255,69,0,0.55))" }}>
                 <p.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-5 text-lg font-semibold">{p.title}</h3>
+              <h3 className="mt-5 text-lg font-semibold text-foreground">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{p.body}</p>
             </div>
           ))}
