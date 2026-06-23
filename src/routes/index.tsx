@@ -165,11 +165,11 @@ function HeroOrbit() {
   ];
   return (
     <div className="relative mx-auto aspect-square w-full max-w-md">
-      <div className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 60%)" }} />
+      <div className="absolute inset-0" style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 60%)" }} />
       {/* orbits */}
-      <div className="absolute inset-2 orbit-ring opacity-60" />
-      <div className="absolute inset-10 rounded-full border border-border/70" />
-      <div className="absolute inset-20 orbit-ring opacity-40" />
+      <div className="absolute inset-2 border border-dashed border-primary/35 opacity-60" />
+      <div className="absolute inset-10 border border-border/70" />
+      <div className="absolute inset-20 border border-dashed border-primary/35 opacity-40" />
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative h-28 w-28 bg-card glow-ring grid place-items-center">
@@ -213,9 +213,9 @@ function HeroOrbit() {
 /* ---------- Ticker ---------- */
 function Ticker() {
   const items = [
-    "ATOMIC SCREEN", "•", "WEB DESIGN", "•", "SEO", "•", "AI WORKFLOWS",
-    "•", "DIGITAL OPS", "•", "DNS / SSL", "•", "GOOGLE BUSINESS", "•",
-    "ANALYTICS", "•", "AUTOMATION", "•", "PLAIN ENGLISH", "•", "NO BLOAT",
+    "ATOMIC SCREEN", "■", "WEB DESIGN", "■", "SEO", "■", "AI WORKFLOWS",
+    "■", "DIGITAL OPS", "■", "DNS / SSL", "■", "GOOGLE BUSINESS", "■",
+    "ANALYTICS", "■", "AUTOMATION", "■", "PLAIN ENGLISH", "■", "NO BLOAT",
   ];
   const row = [...items, ...items];
   return (
