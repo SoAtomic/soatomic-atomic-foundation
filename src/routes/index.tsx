@@ -249,7 +249,7 @@ function Manifesto() {
       <div className="mx-auto max-w-6xl px-6 relative">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <h2 className="text-3xl md:text-5xl font-semibold max-w-3xl leading-[1.05]">
+            <h2 className="text-3xl md:text-5xl font-semibold max-w-3xl leading-[1.05] text-foreground">
               Anti-bloat. Pro-clarity. Built for the people who actually run the business.
             </h2>
           </div>
@@ -288,10 +288,10 @@ function Manifesto() {
 }
 
 /* ---------- Section helpers ---------- */
-function SectionHeader({ title, sub, accent }: { title: string; sub?: string; accent?: boolean }) {
+function SectionHeader({ title, sub, accent, white }: { title: string; sub?: string; accent?: boolean; white?: boolean }) {
   return (
     <div className="max-w-2xl">
-      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""}`}>{title}</h2>
+      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""} ${white ? "text-foreground" : ""}`}>{title}</h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
     </div>
   );
@@ -310,6 +310,7 @@ function Problem() {
         <SectionHeader
           title="Tired of digital vendors that make everything harder?"
           sub="You should not need a ticket, three meetings, and a platform specialist just to understand your website, fix a headline, update a service page, or know who owns your domain."
+          white
         />
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {pains.map(p => (
@@ -344,7 +345,7 @@ function Services() {
   return (
     <section id="services" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader title="Start with clarity. Then build what matters." />
+        <SectionHeader title="Start with clarity. Then build what matters." white />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
             <div key={s.key} className={`atomic-card p-7 relative overflow-hidden ${i === 0 ? "lg:row-span-2" : ""}`}>
@@ -385,7 +386,7 @@ function BuildSizes() {
   return (
     <section id="sizes" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader title="Builds sized to the job." />
+        <SectionHeader title="Builds sized to the job." white />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {sizes.map((s, i) => (
             <div key={s.size} className="atomic-card p-6 flex flex-col relative overflow-hidden group hover:border-primary/40 transition-colors">
@@ -423,6 +424,7 @@ function Why() {
         <SectionHeader
           title="Built for clarity, not captivity."
           sub="SoAtomic is for businesses that have outgrown DIY but do not need a bloated agency or a mystery platform."
+          white
         />
         <ul className="space-y-3">
           {items.map(t => (
@@ -449,7 +451,7 @@ function Process() {
   return (
     <section id="process" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader title="How it works." />
+        <SectionHeader title="How it works." white />
         <div className="mt-12 grid md:grid-cols-3 gap-5 relative">
           {steps.map((s) => (
             <div key={s.n} className="atomic-card p-7 relative overflow-hidden">
