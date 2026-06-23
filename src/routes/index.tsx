@@ -171,18 +171,10 @@ function HeroOrbit() {
       <div className="absolute inset-2 orbit-ring opacity-60" />
       <div className="absolute inset-10 rounded-full border border-border/70" />
       <div className="absolute inset-20 orbit-ring opacity-40" />
-      {/* coord ticks */}
-      {["N","E","S","W"].map((d, i) => (
-        <div key={d} className="absolute inset-0 font-mono-soa text-[10px] text-muted-foreground/60"
-          style={{ transform: `rotate(${i*90}deg)` }}>
-          <span className="absolute left-1/2 -translate-x-1/2 top-0">{d}</span>
-        </div>
-      ))}
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
-        <div className="relative h-28 w-28 squircle bg-card glow-ring grid place-items-center">
+        <div className="relative h-28 w-28 bg-card glow-ring grid place-items-center">
           <AtomMark className="h-12 w-12" />
-          <div className="absolute -bottom-2 right-2 font-mono-soa text-[9px] px-1.5 py-0.5 rounded bg-background border border-border text-accent-yellow">Sa</div>
         </div>
       </div>
       {/* nodes */}
@@ -198,8 +190,8 @@ function HeroOrbit() {
               className="absolute -translate-x-1/2 -translate-y-1/2"
               style={{ left: `${x}%`, top: `${y}%` }}
             >
-              <div className="rounded-full bg-card border border-border px-3 py-1 text-xs font-medium animate-float shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-background)_60%,transparent)]" style={{ animationDelay: `${n.angle / 90}s` }}>
-                <span className="text-accent-orange mr-1">●</span>
+              <div className="bg-card border border-border px-3 py-1 text-xs font-medium animate-float shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-background)_60%,transparent)]" style={{ animationDelay: `${n.angle / 90}s` }}>
+                <span className="text-accent-orange mr-1">■</span>
                 <span className="font-mono-soa">{n.label}</span>
               </div>
             </div>
@@ -212,7 +204,7 @@ function HeroOrbit() {
           const rad = (a*Math.PI)/180;
           const x = 50 + 49*Math.cos(rad);
           const y = 50 + 49*Math.sin(rad);
-          return <span key={a} className="absolute h-1.5 w-1.5 rounded-full bg-primary/70" style={{left:`${x}%`,top:`${y}%`,transform:"translate(-50%,-50%)"}}/>
+          return <span key={a} className="absolute h-1.5 w-1.5 bg-primary/70" style={{left:`${x}%`,top:`${y}%`,transform:"translate(-50%,-50%)"}}/>
         })}
       </div>
     </div>
