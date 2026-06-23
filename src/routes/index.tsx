@@ -79,7 +79,6 @@ function Nav() {
           <AtomMark />
           <span className="font-semibold tracking-tight text-base">
             So<span className="text-primary">Atomic</span>
-            <span className="ml-2 font-mono-soa text-[10px] text-muted-foreground align-middle">/ SCZ·CA</span>
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
