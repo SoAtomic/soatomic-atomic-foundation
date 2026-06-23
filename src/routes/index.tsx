@@ -566,7 +566,7 @@ function Footer() {
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
         <div className="flex items-center gap-3">
-          <AtomMark />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-8 w-8 object-contain" />
           <div>
             <div className="font-semibold">So<span className="text-primary">Atomic</span></div>
             <div className="text-xs text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
