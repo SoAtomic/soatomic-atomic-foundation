@@ -10,6 +10,7 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
+import mascotAsset from "@/assets/star-mascot.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,7 +77,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <AtomMark />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-10 w-10 object-contain" />
           <span className="font-semibold tracking-tight text-base">
             So<span className="text-primary">Atomic</span>
           </span>
@@ -173,7 +174,7 @@ function HeroOrbit() {
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative h-28 w-28 bg-card glow-ring grid place-items-center">
-          <AtomMark className="h-12 w-12" />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-20 w-20 object-contain" />
         </div>
       </div>
       {/* nodes */}
@@ -483,7 +484,7 @@ function Founder() {
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-dashed border-primary/35 opacity-25"/>
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary/35 opacity-20"/>
         <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
-          <AtomMark className="h-8 w-8" />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-12 w-12 object-contain" />
         </div>
         <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
           A practical digital partner. Not another black box.
@@ -565,7 +566,7 @@ function Footer() {
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
         <div className="flex items-center gap-3">
-          <AtomMark />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-8 w-8 object-contain" />
           <div>
             <div className="font-semibold">So<span className="text-primary">Atomic</span></div>
             <div className="text-xs text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
