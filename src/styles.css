@@ -168,6 +168,10 @@
     font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
     letter-spacing: -0.02em;
   }
+
+  h1 { color: #37b847; }
+  h2 { color: #ff7200; }
+  h3 { color: #ffff00; }
 }
 
 @utility font-mono-soa {
