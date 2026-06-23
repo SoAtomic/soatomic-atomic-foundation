@@ -141,6 +141,8 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --accent-orange: oklch(0.72 0.19 45);
+  --accent-yellow: oklch(0.93 0.17 105);
 }
 
 @layer base {
