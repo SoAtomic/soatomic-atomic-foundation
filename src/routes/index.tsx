@@ -174,7 +174,7 @@ function HeroOrbit() {
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative h-28 w-28 bg-card glow-ring grid place-items-center">
-          <AtomMark className="h-12 w-12" />
+          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-20 w-20 object-contain" />
         </div>
       </div>
       {/* nodes */}
