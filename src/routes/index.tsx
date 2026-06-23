@@ -121,7 +121,7 @@ function Hero() {
             <span className="text-border">/</span>
             <span className="text-primary">Atomic №01</span>
           </div>
-          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.02] text-gradient">
+          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
             Small business websites,<br />
             <span className="relative inline-block">
               built from the
