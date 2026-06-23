@@ -256,7 +256,7 @@ function Manifesto() {
         </div>
         <div className="mt-12 grid md:grid-cols-2 gap-5">
           <div className="atomic-card p-7">
-            <div className="flex items-center gap-2 font-mono-soa text-[10px] uppercase tracking-widest text-primary">
+            <div className="flex items-center gap-2 font-mono-soa text-xs uppercase tracking-widest text-primary font-bold">
               <Check className="h-3.5 w-3.5"/> What SoAtomic is
             </div>
             <ul className="mt-5 space-y-3">
@@ -269,7 +269,7 @@ function Manifesto() {
             </ul>
           </div>
           <div className="atomic-card p-7">
-            <div className="flex items-center gap-2 font-mono-soa text-[10px] uppercase tracking-widest text-muted-foreground">
+            <div className="flex items-center gap-2 font-mono-soa text-xs uppercase tracking-widest text-muted-foreground font-bold">
               <X className="h-3.5 w-3.5"/> What it isn't
             </div>
             <ul className="mt-5 space-y-3">
