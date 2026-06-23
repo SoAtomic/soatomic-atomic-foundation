@@ -291,7 +291,7 @@ function Manifesto() {
 function SectionHeader({ title, sub, accent, white, green }: { title: string; sub?: string; accent?: boolean; white?: boolean; green?: boolean }) {
   return (
     <div className="max-w-2xl">
-      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""} ${white ? "text-foreground" : ""} ${green ? "!text-[#37b847]" : ""}`}>{title}</h2>
+      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""} ${white ? "text-foreground" : ""} ${green ? "!text-[#37b847]" : ""}`} style={green ? { color: "#37b847" } : undefined}>{title}</h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
     </div>
   );
