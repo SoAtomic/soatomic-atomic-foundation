@@ -288,10 +288,10 @@ function Manifesto() {
 }
 
 /* ---------- Section helpers ---------- */
-function SectionHeader({ title, sub, accent, white }: { title: string; sub?: string; accent?: boolean; white?: boolean }) {
+function SectionHeader({ title, sub, accent, white, green }: { title: string; sub?: string; accent?: boolean; white?: boolean; green?: boolean }) {
   return (
     <div className="max-w-2xl">
-      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""} ${white ? "text-foreground" : ""}`}>{title}</h2>
+      <h2 className={`text-3xl md:text-4xl font-semibold ${accent ? "text-gradient-accent" : ""} ${white ? "text-foreground" : ""} ${green ? "!text-[#37b847]" : ""}`}>{title}</h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
     </div>
   );
@@ -512,7 +512,7 @@ function Contact() {
           <SectionHeader
             title="Start with an Atomic Screen."
             sub="Get a clear view of what is working, what is broken, and what to fix first."
-            accent
+            green
           />
           <div className="mt-8 atomic-card p-6">
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
