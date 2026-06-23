@@ -356,7 +356,7 @@ function Services() {
                 </div>
                 <s.icon className="h-5 w-5 text-primary/70" />
               </div>
-              <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
+              <h3 className="mt-5 text-xl font-semibold text-foreground">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               {i === 0 && (
                 <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm text-primary font-medium font-mono-soa uppercase tracking-widest text-xs">
