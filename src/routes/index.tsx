@@ -116,18 +116,14 @@ function Hero() {
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
           <div className="inline-flex items-center gap-3 rounded-full border border-border bg-card/60 px-3 py-1 font-mono-soa text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-soft" />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-yellow animate-pulse-soft" />
             <span>EST · Santa Cruz, CA</span>
             <span className="text-border">/</span>
-            <span className="text-primary">Atomic №01</span>
+            <span className="text-accent-orange">Atomic №01</span>
           </div>
-          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.02] text-gradient">
+          <h1 className="mt-5 text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
             Small business websites,<br />
-            <span className="relative inline-block">
-              built from the
-              <span className="text-primary"> atoms </span>
-              up.
-            </span>
+            built from the <span className="text-primary">atoms</span> up.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Not a DIY template. Not a bloated agency. SoAtomic screens, builds,
@@ -193,7 +189,7 @@ function HeroOrbit() {
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative h-28 w-28 squircle bg-card glow-ring grid place-items-center">
           <AtomMark className="h-12 w-12" />
-          <div className="absolute -bottom-2 right-2 font-mono-soa text-[9px] px-1.5 py-0.5 rounded bg-background border border-border text-primary">Sa</div>
+          <div className="absolute -bottom-2 right-2 font-mono-soa text-[9px] px-1.5 py-0.5 rounded bg-background border border-border text-accent-yellow">Sa</div>
         </div>
       </div>
       {/* nodes */}
@@ -210,7 +206,7 @@ function HeroOrbit() {
               style={{ left: `${x}%`, top: `${y}%` }}
             >
               <div className="rounded-full bg-card border border-border px-3 py-1 text-xs font-medium animate-float shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-background)_60%,transparent)]" style={{ animationDelay: `${n.angle / 90}s` }}>
-                <span className="text-primary mr-1">●</span>
+                <span className="text-accent-orange mr-1">●</span>
                 <span className="font-mono-soa">{n.label}</span>
               </div>
             </div>
@@ -242,7 +238,7 @@ function Ticker() {
     <div className="border-y border-border/60 bg-card/30 py-4 overflow-hidden ticker-mask">
       <div className="flex gap-10 w-max animate-ticker font-mono-soa text-xs tracking-[0.2em] text-muted-foreground">
         {row.map((t, i) => (
-          <span key={i} className={t === "•" ? "text-primary" : ""}>{t}</span>
+          <span key={i} className={t === "•" ? (i % 4 === 1 ? "text-accent-yellow" : "text-accent-orange") : ""}>{t}</span>
         ))}
       </div>
     </div>
