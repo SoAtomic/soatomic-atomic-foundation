@@ -10,7 +10,6 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
-import mascotAsset from "@/assets/star-mascot.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,24 +43,38 @@ function Index() {
   );
 }
 
-/* ---------- Atom mark ---------- */
-function AtomMark({ className = "h-7 w-7" }: { className?: string }) {
+/* ---------- SA element logo (periodic-table tile) ---------- */
+function SALogo({ size = 40, atomicNo = "01", mass = "12.7" }: { size?: number; atomicNo?: string; mass?: string }) {
   return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden>
-      <defs>
-        <radialGradient id="am-g" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="1" />
-          <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <circle cx="24" cy="24" r="10" fill="url(#am-g)" />
-      <circle cx="24" cy="24" r="3.2" fill="var(--color-primary)" />
-      <g fill="none" stroke="var(--color-primary)" strokeOpacity=".75" strokeWidth="1.2">
-        <ellipse cx="24" cy="24" rx="20" ry="8" />
-        <ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)" />
-        <ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)" />
-      </g>
-    </svg>
+    <div
+      className="element-tile"
+      style={{ width: size, height: size }}
+      aria-label="SoAtomic"
+    >
+      <span
+        className="absolute left-1 top-0.5 font-mono-soa text-primary"
+        style={{ fontSize: Math.max(7, size * 0.18) }}
+      >
+        {atomicNo}
+      </span>
+      <span
+        className="absolute right-1 top-0.5 font-mono-soa text-muted-foreground"
+        style={{ fontSize: Math.max(6, size * 0.14) }}
+      >
+        {mass}
+      </span>
+      <span
+        className="font-semibold tracking-tight text-foreground"
+        style={{
+          fontSize: Math.max(14, size * 0.45),
+          fontFamily: '"Space Grotesk", "Inter", sans-serif',
+          lineHeight: 1,
+          marginTop: size * 0.06,
+        }}
+      >
+        SA
+      </span>
+    </div>
   );
 }
 
@@ -77,7 +90,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-10 w-10 object-contain" />
+          <SALogo size={40} atomicNo="01" mass="12.7" />
           <span className="font-semibold tracking-tight text-base">
             So<span className="text-primary">Atomic</span>
           </span>
@@ -88,7 +101,7 @@ function Nav() {
           ))}
         </nav>
         <a href="#contact">
-          <Button size="sm" className="rounded-full font-semibold">Book a Screen <ArrowRight /></Button>
+          <Button size="sm" className="mech-btn font-semibold">Book a Screen <ArrowRight /></Button>
         </a>
       </div>
     </header>
@@ -127,7 +140,7 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#contact">
-              <Button size="lg" className="rounded-full font-semibold glow-ring">
+              <Button size="lg" className="mech-btn font-semibold glow-ring">
                 Book an Atomic Screen <ArrowRight />
               </Button>
             </a>
@@ -173,8 +186,8 @@ function HeroOrbit() {
       <div className="absolute inset-20 border border-dashed border-primary/35 opacity-40" />
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
-        <div className="relative h-28 w-28 bg-card glow-ring grid place-items-center">
-          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-20 w-20 object-contain" />
+        <div className="relative grid place-items-center glow-ring rounded-2xl p-3 bg-card">
+          <SALogo size={88} atomicNo="01" mass="12.7" />
         </div>
       </div>
       {/* nodes */}
@@ -337,41 +350,33 @@ function Problem() {
 /* ---------- Services ---------- */
 function Services() {
   const services = [
-    { icon: Search, sym: "Sc", key: "Screen", title: "Atomic Screen",
-      body: "A plain-English review of your website, SEO, domain/DNS, SSL, Google presence, social presence, and AI opportunities. You get a prioritized action plan." },
-    { icon: Hammer, sym: "Bd", key: "Build", title: "Atomic Build",
-      body: "Websites, landing pages, brand assets, and lightweight digital systems sized from S to XXL as your needs grow." },
-    { icon: HeartPulse, sym: "Cr", key: "Care", title: "Atomic Care",
-      body: "Ongoing support for updates, digital operations, DNS/SSL coordination, Google Workspace, analytics, backups, and small fixes." },
-    { icon: TrendingUp, sym: "Gr", key: "Grow", title: "Atomic Grow",
-      body: "SEO, Google Business Profile, content planning, service pages, campaigns, reviews, and social presence support." },
-    { icon: Bot, sym: "Au", key: "Automate", title: "Atomic Automate",
-      body: "Practical AI workflows, prompt kits, customer response templates, content systems, and lightweight automation." },
+    { icon: Search,      sym: "Sc", num: "01", title: "Screening",
+      body: "Plain-English audit of your website, SEO, domain, DNS, SSL, Google presence, and AI opportunities. You leave with a prioritized fix list." },
+    { icon: Hammer,      sym: "Bd", num: "02", title: "Brand",
+      body: "Identity, voice, and naming work tight enough to ship. Logos, palettes, and the small system that makes everything else consistent." },
+    { icon: HeartPulse,  sym: "Cr", num: "03", title: "Creative",
+      body: "Copy, layouts, landing pages, and visual systems built to communicate — not to win awards no one asked for." },
+    { icon: TrendingUp,  sym: "Gr", num: "04", title: "Growth",
+      body: "SEO architecture, Google Business Profile, content plans, and measurable channel work. No vanity dashboards." },
+    { icon: Bot,         sym: "Au", num: "05", title: "Audit",
+      body: "Quarterly check on your digital architecture — DNS, SSL, accounts, ownership, performance, and risk. Findings in plain language." },
   ];
   return (
     <section id="services" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader title="Start with clarity. Then build what matters." white />
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((s, i) => (
-            <div key={s.key} className={`atomic-card p-7 relative overflow-hidden ${i === 0 ? "lg:row-span-2" : ""}`}>
-              {/* periodic-tile symbol */}
-              <div className="flex items-start justify-between">
-                <div className="h-16 w-16 bg-background grid place-items-center text-primary glow-ring relative">
-                  <span className="text-2xl font-semibold">{s.sym}</span>
-                </div>
-                <s.icon className="h-5 w-5 text-primary/70" />
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          {services.map((s) => (
+            <div key={s.title} className="crt-card p-5 flex flex-col items-stretch text-left">
+              <div className="element-tile h-20 w-full" aria-hidden>
+                <span className="absolute left-1.5 top-1 font-mono-soa text-[10px] text-primary">{s.num}</span>
+                <s.icon className="absolute right-1.5 top-1 h-3 w-3 text-muted-foreground" />
+                <span className="font-semibold text-3xl text-foreground" style={{ fontFamily: '"Space Grotesk", sans-serif' }}>
+                  {s.sym}
+                </span>
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-foreground">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              {i === 0 && (
-                <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-sm text-primary font-medium font-mono-soa uppercase tracking-widest text-xs">
-                  Start here <ArrowRight className="h-4 w-4" />
-                </a>
-              )}
-              {/* corner dot motif */}
-              <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 border border-dashed border-primary/35 opacity-50" />
-              <div className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 border border-border/40" />
+              <h3 className="mt-4 text-base font-semibold text-foreground">{s.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.body}</p>
             </div>
           ))}
         </div>
@@ -383,32 +388,80 @@ function Services() {
 /* ---------- Build Sizes ---------- */
 function BuildSizes() {
   const sizes = [
-    { size: "S", title: "Launchpad", body: "One-page site or landing page." },
-    { size: "M", title: "Small business", body: "Small business website, 3–5 pages." },
-    { size: "X", title: "Content engine", body: "Larger site with CMS/blog and SEO structure." },
-    { size: "XL", title: "Scale", body: "Multi-location, integrations, or migration." },
-    { size: "XXL", title: "Escape velocity", body: "Complex platform escape, multi-site, or custom digital system." },
+    {
+      size: "S",
+      title: "1 Page",
+      body: "High-impact landing page or single-scroll profile.",
+      includes: ["One-page architecture", "Copy + layout", "Form + analytics"],
+    },
+    {
+      size: "M",
+      title: "2–8 Pages",
+      body: "Standard brochure, informational, or portfolio site.",
+      includes: ["Up to 8 pages", "Service / about / contact", "Basic SEO setup"],
+    },
+    {
+      size: "L",
+      title: "Content Engine",
+      body: "10 prebuilt pages plus an integrated CMS so you can manage it yourself.",
+      includes: ["10 prebuilt pages", "Integrated CMS", "Editor training"],
+    },
+    {
+      size: "XL",
+      title: "E-Commerce",
+      body: "Full digital storefront, payment gateway wiring, and installation of up to 100 initial SKUs.",
+      includes: ["Storefront + checkout", "Payment gateway wiring", "Up to 100 SKUs loaded"],
+      note: "We do not manage store operations post-launch.",
+    },
+    {
+      size: "XXL",
+      title: "Escape Velocity",
+      body: "CMS + E-Commerce + Cloud Identity Management for small teams.",
+      includes: [
+        "Everything in L and XL",
+        "Cloud-only permissions, user groups, and shares",
+        "Entra ID or Google Cloud (GCP) tenant setup",
+      ],
+      note: "No hardware, no printers, no ID badges.",
+    },
   ];
   return (
     <section id="sizes" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader title="Builds sized to the job." white />
+        <SectionHeader
+          title="Right-sized builds. Five tiers, no mystery."
+          sub="Pick the shape that fits the job. Scope is explicit; what we don't do is also explicit."
+          white
+        />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {sizes.map((s, i) => (
-            <div key={s.size} className="atomic-card p-6 flex flex-col relative overflow-hidden group hover:border-primary/40 transition-colors">
+          {sizes.map((s) => (
+            <div key={s.size} className="crt-card p-5 flex flex-col">
               <div className="flex items-baseline justify-between">
-                <span className="text-4xl font-semibold text-primary">{s.size}</span>
+                <span className="text-4xl font-semibold text-primary font-mono-soa">{s.size}</span>
+                <span className="font-mono-soa text-[10px] uppercase tracking-widest text-muted-foreground">Tier</span>
               </div>
               <div className="mt-4 h-px w-full bg-border" />
-              <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
-              <div className="pointer-events-none absolute -right-8 -bottom-8 h-24 w-24 border border-border/40 group-hover:border-primary/30 transition-colors"/>
+              <h3 className="mt-4 text-base font-semibold text-foreground">{s.title}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{s.body}</p>
+              <ul className="mt-4 space-y-1.5">
+                {s.includes.map((it) => (
+                  <li key={it} className="flex items-start gap-2 text-[11px] text-foreground/90">
+                    <Check className="h-3 w-3 mt-0.5 text-primary shrink-0" />
+                    <span>{it}</span>
+                  </li>
+                ))}
+              </ul>
+              {s.note && (
+                <p className="mt-4 pt-3 border-t border-border/60 text-[11px] text-accent-orange font-medium leading-snug">
+                  {s.note}
+                </p>
+              )}
             </div>
           ))}
         </div>
         <p className="mt-8 text-sm text-muted-foreground max-w-2xl">
-          Most projects start with <span className="text-foreground font-medium">Atomic Screen</span> so the
-          build is scoped around what you actually need.
+          Most projects start with a <span className="text-foreground font-medium">Screening</span> so the build is
+          scoped to what you actually need — nothing more.
         </p>
       </div>
     </section>
@@ -484,7 +537,7 @@ function Founder() {
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-dashed border-primary/35 opacity-25"/>
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary/35 opacity-20"/>
         <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
-          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-12 w-12 object-contain" />
+          <SALogo size={56} atomicNo="01" mass="12.7" />
         </div>
         <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
           A practical digital partner. Not another black box.
@@ -566,7 +619,7 @@ function Footer() {
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src={mascotAsset.url} alt="SoAtomic mascot" className="h-8 w-8 object-contain" />
+          <SALogo size={36} atomicNo="01" mass="12.7" />
           <div>
             <div className="font-semibold">So<span className="text-primary">Atomic</span></div>
             <div className="text-xs text-muted-foreground">Web. SEO. AI. Digital Operations.</div>

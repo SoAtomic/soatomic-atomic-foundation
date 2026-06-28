@@ -221,6 +221,91 @@
   color: transparent;
 }
 
+/* ---------- Retrofuturism / CRT / Tactile UI ---------- */
+@utility scanlines {
+  position: relative;
+}
+@utility scanlines-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-foreground) 4%, transparent) 0px,
+    color-mix(in oklab, var(--color-foreground) 4%, transparent) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+  border-radius: inherit;
+}
+@utility crt-card {
+  background: var(--gradient-card), var(--color-card);
+  border: 1px solid color-mix(in oklab, var(--primary) 22%, var(--color-border));
+  border-radius: 22px;
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 7%, transparent),
+    inset 0 0 0 1px color-mix(in oklab, var(--color-background) 60%, transparent),
+    0 14px 40px -22px rgba(0,0,0,.7);
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-foreground) 5%, transparent) 0px,
+      color-mix(in oklab, var(--color-foreground) 5%, transparent) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    opacity: 0.18;
+    border-radius: inherit;
+  }
+}
+@utility mech-btn {
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--primary) 45%, var(--color-border));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 18%, transparent),
+    inset 0 -2px 0 color-mix(in oklab, black 30%, transparent),
+    0 6px 0 -2px color-mix(in oklab, black 40%, transparent),
+    0 10px 24px -10px color-mix(in oklab, var(--primary) 40%, transparent);
+  transition: transform .08s ease, box-shadow .08s ease;
+  &:active {
+    transform: translateY(2px);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, white 10%, transparent),
+      inset 0 -1px 0 color-mix(in oklab, black 20%, transparent),
+      0 2px 0 -2px color-mix(in oklab, black 40%, transparent),
+      0 4px 12px -8px color-mix(in oklab, var(--primary) 40%, transparent);
+  }
+}
+@utility element-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--primary) 8%, var(--color-card)), var(--color-card));
+  border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--color-border));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 10%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--color-background) 60%, transparent),
+    0 8px 24px -16px color-mix(in oklab, var(--primary) 60%, transparent);
+}
+
+@keyframes crt-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.86; }
+  94% { opacity: 1; }
+  96% { opacity: 0.93; }
+}
+@utility animate-crt-flicker { animation: crt-flicker 6s infinite; }
+
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 @keyframes pulse-soft { 0%,100% { opacity: .6; } 50% { opacity: 1; } }
 @keyframes float-y { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
