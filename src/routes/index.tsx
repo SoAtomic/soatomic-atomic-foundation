@@ -10,6 +10,7 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
+import logoAsset from "@/assets/soatomic-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,38 +44,15 @@ function Index() {
   );
 }
 
-/* ---------- SA element logo (periodic-table tile) ---------- */
-function SALogo({ size = 40, atomicNo = "01", mass = "12.7" }: { size?: number; atomicNo?: string; mass?: string }) {
+/* ---------- Logo image ---------- */
+function SoAtomicLogo({ className = "", alt = "SoAtomic" }: { className?: string; alt?: string }) {
   return (
-    <div
-      className="element-tile"
-      style={{ width: size, height: size }}
-      aria-label="SoAtomic"
-    >
-      <span
-        className="absolute left-1 top-0.5 font-mono-soa text-primary"
-        style={{ fontSize: Math.max(7, size * 0.18) }}
-      >
-        {atomicNo}
-      </span>
-      <span
-        className="absolute right-1 top-0.5 font-mono-soa text-muted-foreground"
-        style={{ fontSize: Math.max(6, size * 0.14) }}
-      >
-        {mass}
-      </span>
-      <span
-        className="font-semibold tracking-tight text-foreground"
-        style={{
-          fontSize: Math.max(14, size * 0.45),
-          fontFamily: '"Space Grotesk", "Inter", sans-serif',
-          lineHeight: 1,
-          marginTop: size * 0.06,
-        }}
-      >
-        SA
-      </span>
-    </div>
+    <img
+      src={logoAsset.url}
+      alt={alt}
+      className={`${className}`}
+      style={{ imageRendering: "auto" }}
+    />
   );
 }
 
