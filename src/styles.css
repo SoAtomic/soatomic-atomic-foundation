@@ -172,6 +172,22 @@
   h1 { color: #37b847; }
   h2 { color: #ff7200; }
   h3 { color: #ffff00; }
+
+  /* Readability floor — no body text below 16px */
+  html { font-size: 16px; }
+  p, li, label, figcaption, dd, dt, blockquote { font-size: 1rem; line-height: 1.6; }
+  em, i { font-style: italic; font-synthesis: none; letter-spacing: 0; }
+
+  /* Override Tailwind size utilities so micro-copy is never tinier than 1rem */
+  .text-xs,
+  .text-\[10px\],
+  .text-\[11px\],
+  .text-\[12px\],
+  .text-\[13px\],
+  .text-sm {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
 }
 
 @utility font-mono-soa {
