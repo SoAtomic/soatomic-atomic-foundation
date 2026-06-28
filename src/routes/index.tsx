@@ -10,6 +10,7 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
+import logoAsset from "@/assets/soatomic-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,38 +44,15 @@ function Index() {
   );
 }
 
-/* ---------- SA element logo (periodic-table tile) ---------- */
-function SALogo({ size = 40, atomicNo = "01", mass = "12.7" }: { size?: number; atomicNo?: string; mass?: string }) {
+/* ---------- Logo image ---------- */
+function SoAtomicLogo({ className = "", alt = "SoAtomic" }: { className?: string; alt?: string }) {
   return (
-    <div
-      className="element-tile"
-      style={{ width: size, height: size }}
-      aria-label="SoAtomic"
-    >
-      <span
-        className="absolute left-1 top-0.5 font-mono-soa text-primary"
-        style={{ fontSize: Math.max(7, size * 0.18) }}
-      >
-        {atomicNo}
-      </span>
-      <span
-        className="absolute right-1 top-0.5 font-mono-soa text-muted-foreground"
-        style={{ fontSize: Math.max(6, size * 0.14) }}
-      >
-        {mass}
-      </span>
-      <span
-        className="font-semibold tracking-tight text-foreground"
-        style={{
-          fontSize: Math.max(14, size * 0.45),
-          fontFamily: '"Space Grotesk", "Inter", sans-serif',
-          lineHeight: 1,
-          marginTop: size * 0.06,
-        }}
-      >
-        SA
-      </span>
-    </div>
+    <img
+      src={logoAsset.url}
+      alt={alt}
+      className={`${className}`}
+      style={{ imageRendering: "auto" }}
+    />
   );
 }
 
@@ -90,7 +68,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
-          <SALogo size={40} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-8 w-auto" />
           <span className="font-semibold tracking-tight text-base">
             So<span className="text-primary">Atomic</span>
           </span>
@@ -187,7 +165,7 @@ function HeroOrbit() {
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative grid place-items-center glow-ring rounded-2xl p-3 bg-card">
-          <SALogo size={88} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-16 w-auto" />
         </div>
       </div>
       {/* nodes */}
@@ -537,7 +515,7 @@ function Founder() {
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-dashed border-primary/35 opacity-25"/>
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary/35 opacity-20"/>
         <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
-          <SALogo size={56} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-10 w-auto" />
         </div>
         <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
           A practical digital partner. Not another black box.
@@ -619,7 +597,7 @@ function Footer() {
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
         <div className="flex items-center gap-3">
-          <SALogo size={36} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-7 w-auto" />
           <div>
             <div className="font-semibold">So<span className="text-primary">Atomic</span></div>
             <div className="text-xs text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
