@@ -165,7 +165,7 @@ function HeroOrbit() {
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative grid place-items-center glow-ring rounded-2xl p-3 bg-card">
-          <SALogo size={88} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-16 w-auto" />
         </div>
       </div>
       {/* nodes */}
@@ -515,7 +515,7 @@ function Founder() {
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] border border-dashed border-primary/35 opacity-25"/>
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary/35 opacity-20"/>
         <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center relative">
-          <SALogo size={56} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-10 w-auto" />
         </div>
         <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
           A practical digital partner. Not another black box.
@@ -597,7 +597,7 @@ function Footer() {
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
         <div className="flex items-center gap-3">
-          <SALogo size={36} atomicNo="01" mass="12.7" />
+          <SoAtomicLogo className="h-7 w-auto" />
           <div>
             <div className="font-semibold">So<span className="text-primary">Atomic</span></div>
             <div className="text-xs text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
