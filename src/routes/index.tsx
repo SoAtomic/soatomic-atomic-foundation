@@ -10,7 +10,7 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
-import logoAsset from "@/assets/soatomic-logo.png.asset.json";
+import logoAsset from "@/assets/mascot.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
