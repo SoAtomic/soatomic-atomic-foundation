@@ -10,7 +10,8 @@ import {
   ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
   AlertTriangle, KeyRound, Compass, Check, Mail, X,
 } from "lucide-react";
-import logoAsset from "@/assets/mascot.png.asset.json";
+import logoAsset from "@/assets/soatomic-logo.png.asset.json";
+import mascotAsset from "@/assets/mascot.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -162,7 +163,7 @@ function HeroOrbit() {
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
         <div className="relative grid place-items-center glow-ring rounded-2xl p-3 bg-card">
-          <SoAtomicLogo className="h-16 w-auto" />
+          <img src={mascotAsset.url} className="h-16 w-auto" alt="SoAtomic mascot" style={{ imageRendering: "auto" }} />
         </div>
       </div>
       {/* nodes */}
