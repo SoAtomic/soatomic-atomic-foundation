@@ -593,12 +593,9 @@ function Footer() {
   return (
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-        <div className="flex items-center gap-3">
-          <SoAtomicLogo className="h-7 w-auto" />
-          <div>
-            <div className="font-semibold">So<span className="text-primary">Atomic</span></div>
-            <div className="text-xs text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
-          </div>
+        <div className="flex flex-col items-start gap-2">
+          <SoAtomicLogo className="h-9 w-auto" />
+          <div className="text-sm text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
         </div>
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
           <a href="#services" className="hover:text-foreground">Services</a>
