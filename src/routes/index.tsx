@@ -68,7 +68,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center">
-          <SoAtomicLogo className="h-11 w-auto" />
+          <SoAtomicLogo className="h-[5.5rem] w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map(l => (
@@ -594,7 +594,7 @@ function Footer() {
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
         <div className="flex flex-col items-start gap-2">
-          <SoAtomicLogo className="h-9 w-auto" />
+          <SoAtomicLogo className="h-[4.5rem] w-auto" />
           <div className="text-sm text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
         </div>
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
