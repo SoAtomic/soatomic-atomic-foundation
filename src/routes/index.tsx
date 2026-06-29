@@ -162,9 +162,7 @@ function HeroOrbit() {
       <div className="absolute inset-20 border border-dashed border-primary/35 opacity-40" />
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
-        <div className="relative grid place-items-center glow-ring rounded-2xl p-3 bg-card">
-          <img src={mascotAsset.url} className="h-16 w-auto" alt="SoAtomic mascot" style={{ imageRendering: "auto" }} />
-        </div>
+        <img src={mascotAsset.url} className="h-28 w-auto" alt="SoAtomic mascot" style={{ imageRendering: "auto" }} />
       </div>
       {/* nodes */}
       <div className="absolute inset-0 animate-orbit">
