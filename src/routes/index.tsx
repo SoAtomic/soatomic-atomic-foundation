@@ -148,10 +148,10 @@ function Hero() {
 
 function HeroOrbit() {
   const nodes = [
-    { label: "Web", angle: 0 },
-    { label: "SEO", angle: 90 },
-    { label: "AI", angle: 180 },
-    { label: "Ops", angle: 270 },
+    { label: "Web", angle: 0, color: "#37b847" },
+    { label: "SEO", angle: 90, color: "#ff7200" },
+    { label: "AI", angle: 180, color: "#a855f7" },
+    { label: "Ops", angle: 270, color: "#3b82f6" },
   ];
   return (
     <div className="relative mx-auto aspect-square w-full max-w-md">
@@ -162,7 +162,7 @@ function HeroOrbit() {
       <div className="absolute inset-20 border border-dashed border-primary/35 opacity-40" />
       {/* nucleus */}
       <div className="absolute inset-0 grid place-items-center">
-        <img src={mascotAsset.url} className="h-28 w-auto" alt="SoAtomic mascot" style={{ imageRendering: "auto" }} />
+        <img src={mascotAsset.url} className="h-56 w-auto" alt="SoAtomic mascot" style={{ imageRendering: "auto" }} />
       </div>
       {/* nodes */}
       <div className="absolute inset-0 animate-orbit">
@@ -177,8 +177,11 @@ function HeroOrbit() {
               className="absolute -translate-x-1/2 -translate-y-1/2"
               style={{ left: `${x}%`, top: `${y}%` }}
             >
-              <div className="bg-card border border-border px-3 py-1 text-xs font-medium animate-float shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-background)_60%,transparent)]" style={{ animationDelay: `${n.angle / 90}s` }}>
-                <span className="text-accent-orange mr-1">■</span>
+              <div
+                className="bg-card border border-border px-3 py-1 text-xs font-medium shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-background)_60%,transparent)]"
+                style={{ animation: "orbit-spin-rev 24s linear infinite" }}
+              >
+                <span className="mr-1" style={{ color: n.color }}>■</span>
                 <span className="font-mono-soa">{n.label}</span>
               </div>
             </div>
