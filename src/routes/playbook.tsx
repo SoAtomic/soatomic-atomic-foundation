@@ -1,7 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BookOpen, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { PageHead, H2 } from "@/components/site/SectionHeader";
 import { CtaBanner } from "@/components/site/CtaBanner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/playbook")({
   head: () => ({
@@ -27,13 +33,49 @@ const MAXIMS = [
   "Accessibility is a requirement, not an upgrade.",
 ];
 
-const CONTENTS = [
-  { t: "Workshop principles", d: "The commitments that shape every project." },
-  { t: "Service boundaries", d: "What is inside the workshop's scope, and what is not." },
-  { t: "Documentation standards", d: "The written record that ships with every engagement." },
-  { t: "Technology standards", d: "The specific tools the workshop uses, and why." },
-  { t: "Ownership philosophy", d: "How and why clients hold their own accounts and assets." },
-  { t: "Working methods", d: "How a project moves through Screen, Blueprint, Build, Launch, Care, and Grow." },
+const TEASERS = [
+  {
+    title: "Workshop Principles",
+    body: [
+      "Every workshop is guided by a set of principles that shape how decisions are made. At SoAtomic, those principles include transparency, simplicity, documentation, accessibility, security, and long-term thinking.",
+      "These aren't marketing promises—they're practical commitments that influence every recommendation, every project, and every line of work we deliver.",
+    ],
+  },
+  {
+    title: "Service Boundaries",
+    body: [
+      "Knowing what we don't do is just as important as knowing what we do. The Playbook clearly defines the workshop's areas of expertise so clients always know what to expect.",
+      "By maintaining clear service boundaries, we can focus on delivering exceptional work within our specialty instead of trying to be everything to everyone.",
+    ],
+  },
+  {
+    title: "Documentation Standards",
+    body: [
+      "Every project leaves behind more than a finished product—it leaves behind a written record. Documentation explains how systems are configured, where important resources live, and how future changes can be made with confidence.",
+      "We believe documentation isn't an optional extra. It's part of the deliverable and one of the ways we ensure clients remain in control of their technology.",
+    ],
+  },
+  {
+    title: "Technology Standards",
+    body: [
+      "The workshop intentionally works with a carefully selected technology stack rather than every platform available. By focusing on trusted tools, we can provide deeper expertise, stronger support, and more consistent long-term results.",
+      "Every technology we recommend is chosen because it aligns with our values of reliability, security, maintainability, and client ownership—not because it's the newest trend.",
+    ],
+  },
+  {
+    title: "Ownership Philosophy",
+    body: [
+      "Your organization should own its digital foundation. That means your website, domain, Google Workspace, Cloudflare account, documentation, and other critical assets remain under your control.",
+      "Our role is to build, guide, and support—not to create dependence. If you ever decide to move on, your systems should move with you.",
+    ],
+  },
+  {
+    title: "Working Methods",
+    body: [
+      "Every project follows the same workshop process: Screen, Blueprint, Build, Launch, Care, and Grow. Each stage has a clear purpose, defined deliverables, and measurable outcomes.",
+      "This structured approach keeps projects organized, reduces surprises, and ensures every decision is made with a clear understanding of both today's needs and tomorrow's maintenance.",
+    ],
+  },
 ];
 
 function PlaybookPage() {
@@ -46,21 +88,32 @@ function PlaybookPage() {
       />
 
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-12 gap-10 items-start">
-          <div className="md:col-span-5">
-            <H2 eyebrow="Contents">What the Playbook covers.</H2>
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="text-3xl md:text-4xl font-semibold">Inside the Playbook</h2>
+          <div className="mt-6 space-y-4 text-lg text-muted-foreground">
+            <p>
+              The SoAtomic Playbook is the workshop's operating manual. It explains how projects are planned, built, documented, and supported from beginning to end. Rather than relying on unwritten practices, the Playbook defines the standards that guide every client engagement.
+            </p>
+            <p>
+              Whether you're considering your first project or have worked with us for years, the Playbook provides a clear picture of how the workshop operates and what you can expect from every stage of the relationship.
+            </p>
           </div>
-          <div className="md:col-span-7 grid gap-4">
-            {CONTENTS.map((c) => (
-              <div key={c.t} className="atomic-card p-5">
-                <div className="flex items-center gap-3">
-                  <BookOpen className="h-4 w-4 text-primary" />
-                  <h3 className="font-semibold text-foreground">{c.t}</h3>
-                </div>
-                <p className="mt-2 text-muted-foreground">{c.d}</p>
-              </div>
+          <Accordion type="single" collapsible className="mt-10">
+            {TEASERS.map((t) => (
+              <AccordionItem key={t.title} value={t.title}>
+                <AccordionTrigger className="text-left text-lg text-foreground">
+                  {t.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-4">
+                    {t.body.map((p, i) => (
+                      <p key={i} className="text-muted-foreground">{p}</p>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
