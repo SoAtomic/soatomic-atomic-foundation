@@ -114,7 +114,7 @@ function Divisions() {
               <h3 className="mt-4 text-xl font-semibold text-foreground">{d.title}</h3>
               <p className="mt-2 text-muted-foreground">{d.body}</p>
               <div className="mt-6 font-mono-soa text-primary uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Enter division <ArrowRight className="h-3 w-3" />
+                Check It Out <ArrowRight className="h-3 w-3" />
               </div>
             </Link>
           ))}
