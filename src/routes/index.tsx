@@ -7,8 +7,8 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import {
-  ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Bot,
-  AlertTriangle, KeyRound, Compass, Check, Mail, X,
+  ArrowRight, Search, Hammer, HeartPulse, TrendingUp,
+  Check, Mail, BookOpen, KeyRound, FileText, Lock, Wrench, Ruler,
 } from "lucide-react";
 import logoAsset from "@/assets/soatomic-logo.png.asset.json";
 import mascotAsset from "@/assets/mascot.png.asset.json";
@@ -16,10 +16,10 @@ import mascotAsset from "@/assets/mascot.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SoAtomic — Digital presence, built from the atoms up." },
-      { name: "description", content: "Santa Cruz web design & management. Practical web, SEO, AI, and digital operations for small businesses." },
-      { property: "og:title", content: "SoAtomic — Digital presence, built from the atoms up." },
-      { property: "og:description", content: "Practical web design, SEO, AI workflows, and digital operations for small businesses." },
+      { title: "SoAtomic — A Boutique Digital Workshop" },
+      { name: "description", content: "SoAtomic helps small organizations build digital foundations they actually own. A small workshop. Ten clients a year. Screen. Build. Care. Grow." },
+      { property: "og:title", content: "SoAtomic — A Boutique Digital Workshop" },
+      { property: "og:description", content: "A small workshop that builds dependable digital foundations for organizations doing meaningful work. Clients own everything. No vendor lock-in." },
     ],
   }),
   component: Index,
@@ -32,12 +32,15 @@ function Index() {
       <Nav />
       <Hero />
       <Ticker />
-      <Problem />
-      <Manifesto />
-      <Services />
+      <Divisions />
       <BuildSizes />
-      <Why />
+      <Care />
+      <Growth />
+      <Audiences />
+      <Maxims />
+      <Trust />
       <Process />
+      <Playbook />
       <Founder />
       <Contact />
       <Footer />
