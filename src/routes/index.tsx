@@ -243,69 +243,48 @@ function SectionHeader({ title, sub, accent, white, green }: { title: string; su
   );
 }
 
-/* ---------- Problem ---------- */
-function Problem() {
-  const pains = [
-    { icon: AlertTriangle, title: "Messy Website", body: "Slow pages, broken layouts, copy that doesn't say what you do." },
-    { icon: KeyRound, title: "Unclear Ownership", body: "No one knows who owns the domain, DNS, or the login that matters." },
-    { icon: Compass, title: "No Practical Plan", body: "Lots of advice, no priorities. Nothing actually ships." },
+/* ---------- Screen (Workshop Division) ---------- */
+function Divisions() {
+  const items = [
+    "Digital audit",
+    "Technology review",
+    "Website review",
+    "Accessibility baseline",
+    "SEO baseline",
+    "Google Workspace review",
+    "Domain and DNS review",
+    "Security review",
   ];
   return (
-    <section className="py-24 border-t border-border/60">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader
-          title="Tired of digital vendors that make everything harder?"
-          sub="You should not need a ticket, three meetings, and a platform specialist just to understand your website, fix a headline, update a service page, or know who owns your domain."
-          white
-        />
-        <div className="mt-12 grid md:grid-cols-3 gap-5">
-          {pains.map(p => (
-            <div key={p.title} className="atomic-card p-6">
-              <div className="h-10 w-10 bg-background grid place-items-center" style={{ color: "#ff4500", filter: "drop-shadow(0 0 5px rgba(255,69,0,0.55))" }}>
-                <p.icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-5 text-lg font-semibold text-foreground">{p.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{p.body}</p>
-            </div>
-          ))}
+    <section id="screen" className="py-24 border-t border-border/60">
+      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-5">
+          <div className="font-mono-soa text-primary text-xs uppercase tracking-widest">Division 01 · Screen</div>
+          <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-foreground">
+            Every relationship begins with a Screen.
+          </h2>
+          <p className="mt-5 text-muted-foreground">
+            Before we quote a build, we look at what already exists. The Screen
+            is a plain-language review of your website, workspace, domain,
+            and the accounts behind them. You leave with a written record of
+            what is working, what is fragile, and what should be done next —
+            whether or not we do the work.
+          </p>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Services ---------- */
-function Services() {
-  const services = [
-    { icon: Search,      sym: "Sc", num: "01", title: "Screening",
-      body: "Plain-English audit of your website, SEO, domain, DNS, SSL, Google presence, and AI opportunities. You leave with a prioritized fix list." },
-    { icon: Hammer,      sym: "Bd", num: "02", title: "Brand",
-      body: "Identity, voice, and naming work tight enough to ship. Logos, palettes, and the small system that makes everything else consistent." },
-    { icon: HeartPulse,  sym: "Cr", num: "03", title: "Creative",
-      body: "Copy, layouts, landing pages, and visual systems built to communicate — not to win awards no one asked for." },
-    { icon: TrendingUp,  sym: "Gr", num: "04", title: "Growth",
-      body: "SEO architecture, Google Business Profile, content plans, and measurable channel work. No vanity dashboards." },
-    { icon: Bot,         sym: "Au", num: "05", title: "Audit",
-      body: "Quarterly check on your digital architecture — DNS, SSL, accounts, ownership, performance, and risk. Findings in plain language." },
-  ];
-  return (
-    <section id="services" className="py-24 border-t border-border/60">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader title="Start with clarity. Then build what matters." white />
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {services.map((s) => (
-            <div key={s.title} className="crt-card p-5 flex flex-col items-stretch text-left">
-              <div className="element-tile h-20 w-full" aria-hidden>
-                <span className="absolute left-1.5 top-1 font-mono-soa text-[10px] text-primary">{s.num}</span>
-                <s.icon className="absolute right-1.5 top-1 h-3 w-3 text-muted-foreground" />
-                <span className="font-semibold text-3xl text-foreground" style={{ fontFamily: '"Space Grotesk", sans-serif' }}>
-                  {s.sym}
-                </span>
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">{s.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.body}</p>
+        <div className="md:col-span-7">
+          <div className="crt-card p-6">
+            <div className="flex items-center gap-2 font-mono-soa text-xs uppercase tracking-widest text-primary">
+              <Search className="h-3.5 w-3.5"/> Screen checklist
             </div>
-          ))}
+            <ul className="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+              {items.map(t => (
+                <li key={t} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 bg-primary shrink-0"/>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
