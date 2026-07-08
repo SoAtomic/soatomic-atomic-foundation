@@ -207,14 +207,14 @@ function MaximsPreview() {
         style={{ maskImage: "linear-gradient(180deg, transparent, black, transparent)" }}
       />
       <div className="mx-auto max-w-7xl px-6 relative">
-        <H2 eyebrow="Workshop Maxims" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
+        <H2 eyebrow="Workshop Rules" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
           How the workshop thinks.
         </H2>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {maxims.map((m, i) => (
             <div key={m} className="crt-card p-5">
               <div className="font-mono-soa text-primary uppercase tracking-widest">
-                Maxim {String(i + 1).padStart(2, "0")}
+                Rule {String(i + 1).padStart(2, "0")}
               </div>
               <p className="mt-3 text-foreground font-semibold leading-snug">{m}</p>
             </div>
