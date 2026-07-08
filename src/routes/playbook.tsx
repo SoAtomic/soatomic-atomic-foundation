@@ -37,7 +37,7 @@ const TEASERS = [
   {
     title: "Workshop Principles",
     body: [
-      "Every workshop is guided by a set of principles that shape how decisions are made. At SoAtomic, those principles include transparency, simplicity, documentation, accessibility, security, and long-term thinking.",
+      "We are guided by a set of principles that shape how decisions are made. At SoAtomic, those principles include transparency, simplicity, documentation, accessibility, security, and long-term thinking.",
       "These aren't marketing promises—they're practical commitments that influence every recommendation, every project, and every line of work we deliver.",
     ],
   },
