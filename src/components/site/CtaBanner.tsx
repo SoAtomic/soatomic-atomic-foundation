@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -24,16 +23,16 @@ export function CtaBanner({
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground">{title}</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">{body}</p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link to={primaryTo}>
+            <a href={primaryTo}>
               <Button size="lg" className="mech-btn font-semibold glow-ring">
                 {primaryLabel} <ArrowRight />
               </Button>
-            </Link>
-            <Link to={secondaryTo}>
+            </a>
+            <a href={secondaryTo}>
               <Button size="lg" variant="outline" className="rounded-full border-border bg-card/40 hover:bg-card">
                 {secondaryLabel}
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
