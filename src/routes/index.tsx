@@ -291,116 +291,269 @@ function Divisions() {
   );
 }
 
-/* ---------- Build Sizes ---------- */
+/* ---------- Build (Workshop Division) ---------- */
 function BuildSizes() {
-  const sizes = [
+  const packages = [
     {
-      size: "S",
-      title: "1 Page",
-      body: "High-impact landing page or single-scroll profile.",
-      includes: ["One-page architecture", "Copy + layout", "Form + analytics"],
+      sym: "H", num: "01", name: "Hydrogen",
+      body: "The smallest coherent web presence. One page, written and built with care, wired to a domain the client already controls.",
+      forWho: "A single practitioner, project, or landing page.",
+      deliverables: ["One-page site", "Domain and DNS setup", "Basic analytics", "Written handoff"],
+      timeline: "2–3 weeks",
     },
     {
-      size: "M",
-      title: "2–8 Pages",
-      body: "Standard brochure, informational, or portfolio site.",
-      includes: ["Up to 8 pages", "Service / about / contact", "Basic SEO setup"],
+      sym: "C", num: "02", name: "Carbon",
+      body: "A small structured site — the standard shape for a service organization that needs to be understood before it is contacted.",
+      forWho: "Service organizations and small nonprofits.",
+      deliverables: ["Up to 8 pages", "Content architecture", "Form + inbox routing", "Baseline SEO"],
+      timeline: "4–6 weeks",
     },
     {
-      size: "L",
-      title: "Content Engine",
-      body: "10 prebuilt pages plus an integrated CMS so you can manage it yourself.",
-      includes: ["10 prebuilt pages", "Integrated CMS", "Editor training"],
+      sym: "Ti", num: "03", name: "Titanium",
+      body: "A content system the client operates. Editable pages, clear roles, and documentation that explains how each piece works.",
+      forWho: "Organizations that publish regularly.",
+      deliverables: ["10 structured pages", "CMS + editor training", "Content model", "Operator manual"],
+      timeline: "6–8 weeks",
     },
     {
-      size: "XL",
-      title: "E-Commerce",
-      body: "Full digital storefront, payment gateway wiring, and installation of up to 100 initial SKUs.",
-      includes: ["Storefront + checkout", "Payment gateway wiring", "Up to 100 SKUs loaded"],
-      note: "We do not manage store operations post-launch.",
+      sym: "Au", num: "04", name: "Gold",
+      body: "A commerce-capable foundation. Storefront, checkout, and the small pieces that make a shop routinely operable.",
+      forWho: "Small merchants and product-led organizations.",
+      deliverables: ["Storefront + checkout", "Payment gateway", "Up to 100 SKUs loaded", "Fulfillment handoff"],
+      timeline: "8–12 weeks",
+      note: "We build the store. We do not run daily operations.",
     },
     {
-      size: "XXL",
-      title: "Escape Velocity",
-      body: "CMS + E-Commerce + Cloud Identity Management for small teams.",
-      includes: [
-        "Everything in L and XL",
-        "Cloud-only permissions, user groups, and shares",
-        "Entra ID or Google Cloud (GCP) tenant setup",
-      ],
-      note: "No hardware, no printers, no ID badges.",
+      sym: "Pu", num: "05", name: "Plutonium",
+      body: "A full digital foundation: site, commerce, and a cloud identity for a small team — with the documentation to run it independently.",
+      forWho: "Small teams outgrowing DIY.",
+      deliverables: ["Everything in Titanium and Gold", "Cloud identity (Google Workspace or Entra ID)", "Groups, shares, and permissions", "Runbook"],
+      timeline: "10–14 weeks",
+      note: "No hardware, printers, or badge systems.",
     },
   ];
   return (
-    <section id="sizes" className="py-24 border-t border-border/60">
+    <section id="build" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
+        <div className="font-mono-soa text-primary text-xs uppercase tracking-widest">Division 02 · Build</div>
         <SectionHeader
-          title="Right-sized builds. Five tiers, no mystery."
-          sub="Pick the shape that fits the job. Scope is explicit; what we don't do is also explicit."
+          title="Five build packages, named for their weight."
+          sub="Each package is a defined shape with defined boundaries. We say plainly what is included, what is not, and how long it takes."
           white
         />
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {sizes.map((s) => (
-            <div key={s.size} className="crt-card p-5 flex flex-col">
-              <div className="flex items-baseline justify-between">
-                <span className="text-4xl font-semibold text-primary font-mono-soa">{s.size}</span>
-                <span className="font-mono-soa text-[10px] uppercase tracking-widest text-muted-foreground">Tier</span>
+          {packages.map((p) => (
+            <div key={p.name} className="crt-card p-5 flex flex-col">
+              <div className="element-tile h-20 w-full" aria-hidden>
+                <span className="absolute left-1.5 top-1 font-mono-soa text-[10px] text-primary">{p.num}</span>
+                <span className="font-semibold text-3xl text-foreground" style={{ fontFamily: '"Space Grotesk", sans-serif' }}>
+                  {p.sym}
+                </span>
               </div>
-              <div className="mt-4 h-px w-full bg-border" />
-              <h3 className="mt-4 text-base font-semibold text-foreground">{s.title}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{s.body}</p>
-              <ul className="mt-4 space-y-1.5">
-                {s.includes.map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-[11px] text-foreground/90">
-                    <Check className="h-3 w-3 mt-0.5 text-primary shrink-0" />
+              <h3 className="mt-4 text-base font-semibold text-foreground">{p.name}</h3>
+              <p className="mt-2 text-muted-foreground leading-relaxed">{p.body}</p>
+              <div className="mt-4 font-mono-soa uppercase tracking-widest text-primary">For</div>
+              <p className="mt-1 text-foreground/90">{p.forWho}</p>
+              <div className="mt-4 font-mono-soa uppercase tracking-widest text-primary">Deliverables</div>
+              <ul className="mt-2 space-y-1.5">
+                {p.deliverables.map((it) => (
+                  <li key={it} className="flex items-start gap-2 text-foreground/90">
+                    <Check className="h-3 w-3 mt-1 text-primary shrink-0" />
                     <span>{it}</span>
                   </li>
                 ))}
               </ul>
-              {s.note && (
-                <p className="mt-4 pt-3 border-t border-border/60 text-[11px] text-accent-orange font-medium leading-snug">
-                  {s.note}
+              <div className="mt-4 font-mono-soa uppercase tracking-widest text-primary">Timeline</div>
+              <p className="mt-1 text-foreground/90">{p.timeline}</p>
+              {p.note && (
+                <p className="mt-4 pt-3 border-t border-border/60 text-accent-orange font-medium leading-snug">
+                  {p.note}
                 </p>
               )}
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-muted-foreground max-w-2xl">
-          Most projects start with a <span className="text-foreground font-medium">Screening</span> so the build is
-          scoped to what you actually need — nothing more.
+        <p className="mt-8 text-muted-foreground max-w-2xl">
+          Every engagement starts with a Screen so the package is chosen for
+          the work at hand — never sold up.
         </p>
       </div>
     </section>
   );
 }
 
-/* ---------- Why ---------- */
-function Why() {
+/* ---------- Care (Workshop Division) ---------- */
+function Care() {
   const items = [
-    "Portable, understandable systems",
-    "Plain-English recommendations",
-    "Human support",
-    "SEO and AI without the circus",
-    "Web design with digital operations behind it",
+    { t: "Monitoring", d: "Uptime, certificates, and DNS watched quietly in the background." },
+    { t: "Updates", d: "CMS, dependencies, and platform changes reviewed on a schedule." },
+    { t: "Backups", d: "Off-site backups with a documented restore procedure." },
+    { t: "Workspace administration", d: "Google Workspace users, groups, and shared drives kept tidy." },
+    { t: "Cloudflare", d: "DNS, caching, and edge rules maintained where they belong." },
+    { t: "Content changes", d: "Small edits handled without a ticket queue." },
+    { t: "Technical support", d: "A real person who already knows your setup." },
+    { t: "Documentation updates", d: "Runbooks kept current as the system evolves." },
+    { t: "Security review", d: "Regular checks against a written baseline." },
+  ];
+  return (
+    <section id="care" className="py-24 border-t border-border/60">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="font-mono-soa text-primary text-xs uppercase tracking-widest">Division 03 · Care</div>
+        <SectionHeader
+          title="Monthly workshop care."
+          sub="After a build is launched, most systems need quiet, ongoing attention. Care is the arrangement that keeps a foundation dependable without becoming your second job."
+          white
+        />
+        <div className="mt-12 grid md:grid-cols-3 gap-4">
+          {items.map(i => (
+            <div key={i.t} className="atomic-card p-6">
+              <h3 className="font-semibold text-foreground">{i.t}</h3>
+              <p className="mt-2 text-muted-foreground">{i.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Growth (Workshop Division) ---------- */
+function Growth() {
+  const items = [
+    "SEO — technical and structural, not tricks",
+    "Analytics — a small number of numbers that mean something",
+    "Automation — quiet workflows that remove repeated work",
+    "AI integration — narrow, useful, understood",
+    "Accessibility improvements — measured and documented",
+    "Content strategy — publishing you can actually sustain",
+    "Incremental improvements — small steady changes over time",
+  ];
+  return (
+    <section id="growth" className="py-24 border-t border-border/60">
+      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-12 gap-10 items-start">
+        <div className="md:col-span-5">
+          <div className="font-mono-soa text-primary text-xs uppercase tracking-widest">Division 04 · Growth</div>
+          <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-foreground">
+            Steady improvement. Not exponential promises.
+          </h2>
+          <p className="mt-5 text-muted-foreground">
+            Growth is the ongoing work of making a foundation more useful over
+            time. We do not promise dramatic curves. We work in increments,
+            measure before we change, and leave a paper trail of what moved
+            and why.
+          </p>
+        </div>
+        <div className="md:col-span-7">
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {items.map(t => (
+              <li key={t} className="atomic-card flex items-start gap-4 p-4">
+                <span className="h-8 w-8 bg-background grid place-items-center text-primary shrink-0">
+                  <TrendingUp className="h-4 w-4" />
+                </span>
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Audiences ---------- */
+function Audiences() {
+  const groups = [
+    "Nonprofits",
+    "Community organizations",
+    "LGBTQIA+ organizations",
+    "BIPOC organizations",
+    "Veteran-owned organizations",
+    "Disabled-owned organizations",
+    "Service businesses",
   ];
   return (
     <section className="py-24 border-t border-border/60">
-      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-12 items-start">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
-          title="Built for clarity, not captivity."
-          sub="SoAtomic is for businesses that have outgrown DIY but do not need a bloated agency or a mystery platform."
+          title="Who the workshop serves."
+          sub="SoAtomic specializes in small organizations doing meaningful work — the kind of groups that need enterprise-quality systems without an enterprise budget or an enterprise vocabulary."
           white
         />
-        <ul className="space-y-3">
-          {items.map(t => (
-            <li key={t} className="atomic-card flex items-center gap-4 p-4">
-              <span className="h-8 w-8 bg-background grid place-items-center text-primary">
-                <Check className="h-4 w-4" />
-              </span>
-              <span className="text-sm md:text-base">{t}</span>
-            </li>
+        <div className="mt-10 flex flex-wrap gap-3">
+          {groups.map(g => (
+            <span key={g} className="crt-card px-4 py-2 font-mono-soa uppercase tracking-widest text-foreground/90">
+              {g}
+            </span>
           ))}
-        </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Workshop Maxims ---------- */
+function Maxims() {
+  const maxims = [
+    "Clients own their work.",
+    "Documentation is a deliverable.",
+    "No vendor lock-in.",
+    "Build only what is needed.",
+    "Technology should be understandable.",
+    "Measure before changing.",
+    "Leave things better than we found them.",
+    "Simple beats clever.",
+  ];
+  return (
+    <section className="py-24 border-t border-border/60 relative overflow-hidden">
+      <div aria-hidden className="absolute inset-0 dot-grid-bg opacity-[0.18]" style={{maskImage:"linear-gradient(180deg, transparent, black, transparent)"}}/>
+      <div className="mx-auto max-w-6xl px-6 relative">
+        <SectionHeader
+          title="The Workshop Maxims."
+          sub="A short set of rules that shape every project. They are not marketing lines. They are the constraints we work inside."
+          white
+        />
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {maxims.map((m, i) => (
+            <div key={m} className="crt-card p-5">
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Maxim {String(i+1).padStart(2,"0")}</div>
+              <p className="mt-3 text-foreground font-semibold leading-snug">{m}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Trust ---------- */
+function Trust() {
+  const items = [
+    { icon: FileText, t: "Complete documentation", d: "Every account, integration, and setting written down and handed over." },
+    { icon: KeyRound, t: "Passwords remain yours", d: "Credentials belong to the client. We keep records; we do not hold hostage." },
+    { icon: Wrench, t: "Domains remain yours", d: "Domains stay in the client's registrar account, under the client's name." },
+    { icon: Ruler, t: "Google Workspace remains yours", d: "The tenant is billed to and owned by the client from day one." },
+    { icon: Lock, t: "Cloudflare remains yours", d: "DNS and edge configuration live in the client's account. We are delegated collaborators." },
+    { icon: Check, t: "No proprietary systems", d: "We build on tools you can hire anyone to maintain after we are gone." },
+  ];
+  return (
+    <section className="py-24 border-t border-border/60">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeader
+          title="What clients receive."
+          sub="A short and specific description of what leaves the workshop with the client. The plain version — no clever framing."
+          white
+        />
+        <div className="mt-12 grid md:grid-cols-3 gap-4">
+          {items.map(it => (
+            <div key={it.t} className="atomic-card p-6">
+              <div className="h-9 w-9 bg-background grid place-items-center text-primary">
+                <it.icon className="h-4 w-4" />
+              </div>
+              <h3 className="mt-4 font-semibold text-foreground">{it.t}</h3>
+              <p className="mt-2 text-muted-foreground">{it.d}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -409,26 +562,80 @@ function Why() {
 /* ---------- Process ---------- */
 function Process() {
   const steps = [
-    { n: "01", title: "Screen", body: "We review what exists and identify what matters. No assumptions, no jargon walls." },
-    { n: "02", title: "Plan", body: "You get a practical roadmap with priorities — not a 40-page deck no one opens." },
-    { n: "03", title: "Build · Care · Grow · Automate", body: "We fix, maintain, improve, or automate the right pieces. You always own the keys." },
+    { n: "01", title: "Screen", body: "We look at what exists — website, domain, workspace, accounts. Findings written in plain language." },
+    { n: "02", title: "Blueprint", body: "A short document that describes what will be built, what it will not include, and how it fits together." },
+    { n: "03", title: "Build", body: "The work is done in the workshop. Progress is visible; scope stays inside the blueprint." },
+    { n: "04", title: "Launch", body: "The system goes live with documentation, a handoff, and the keys transferred to the client." },
+    { n: "05", title: "Care", body: "Quiet monthly attention keeps the foundation dependable and current." },
+    { n: "06", title: "Grow", body: "Small, measured improvements over time. Nothing changed without a reason." },
   ];
   return (
     <section id="process" className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader title="How it works." white />
-        <div className="mt-12 grid md:grid-cols-3 gap-5 relative">
+        <SectionHeader title="How a project moves through the workshop." white />
+        <div className="mt-12 grid md:grid-cols-3 lg:grid-cols-6 gap-4 relative">
           {steps.map((s) => (
-            <div key={s.n} className="atomic-card p-7 relative overflow-hidden">
-              <div className="flex items-center gap-3">
-                <span className="font-mono-soa text-primary text-sm">{s.n}</span>
+            <div key={s.n} className="atomic-card p-5 relative overflow-hidden">
+              <div className="flex items-center gap-2">
+                <span className="font-mono-soa text-primary">{s.n}</span>
                 <span className="h-px flex-1 bg-border"/>
                 <span className="h-2 w-2 bg-primary animate-pulse-soft"/>
               </div>
-              <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground">{s.body}</p>
+              <h3 className="mt-3 text-lg font-semibold">{s.title}</h3>
+              <p className="mt-2 text-muted-foreground">{s.body}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Playbook ---------- */
+function Playbook() {
+  const items = [
+    "How SoAtomic works",
+    "How projects are documented",
+    "Workshop principles",
+    "Service boundaries",
+    "Ownership philosophy",
+    "Technology standards",
+  ];
+  return (
+    <section id="playbook" className="py-24 border-t border-border/60">
+      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-12 gap-10 items-center">
+        <div className="md:col-span-6">
+          <div className="font-mono-soa text-primary text-xs uppercase tracking-widest">The SoAtomic Playbook</div>
+          <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-foreground">
+            The workshop, written down.
+          </h2>
+          <p className="mt-5 text-muted-foreground">
+            The Playbook is the internal document that defines how SoAtomic
+            operates. It is not marketing. It is the reference we work from
+            and the reason clients know what to expect from us.
+          </p>
+          <div className="mt-8">
+            <a href="#contact">
+              <Button size="lg" className="mech-btn font-semibold">
+                Read the Playbook <BookOpen />
+              </Button>
+            </a>
+          </div>
+        </div>
+        <div className="md:col-span-6">
+          <div className="crt-card p-6">
+            <div className="flex items-center gap-2 font-mono-soa text-xs uppercase tracking-widest text-primary">
+              <BookOpen className="h-3.5 w-3.5"/> Contents
+            </div>
+            <ul className="mt-5 space-y-3">
+              {items.map(t => (
+                <li key={t} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 bg-primary shrink-0"/>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -446,12 +653,18 @@ function Founder() {
           <SoAtomicLogo className="h-10 w-auto" />
         </div>
         <h2 className="mt-6 text-3xl md:text-4xl font-semibold">
-          A practical digital partner. Not another black box.
+          A workshop owner, not a salesperson.
         </h2>
         <p className="mt-6 text-lg text-muted-foreground">
-          SoAtomic was created by a former web designer and infrastructure professional who has seen both sides:
-          the creative web world and the operational tech stack behind it. The goal is simple: help small businesses
-          look credible, get found, own their presence, and stop fighting their tools.
+          SoAtomic is run by Aaron — a builder who spent years on both the
+          creative side of the web and the operational side of the systems
+          behind it. He enjoys helping organizations understand their
+          technology instead of being intimidated by it.
+        </p>
+        <p className="mt-4 text-lg text-muted-foreground">
+          The workshop is intentionally small. About ten clients a year.
+          That number is the point — it keeps the work careful, the
+          documentation current, and the relationships real.
         </p>
       </div>
     </section>
