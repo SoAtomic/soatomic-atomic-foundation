@@ -36,6 +36,22 @@ function ScreenPage() {
       />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-10 crt-card p-6 md:p-8 grid md:grid-cols-2 gap-6">
+            <div>
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Atomic Screen</div>
+              <div className="mt-2 text-2xl font-semibold text-foreground">$99</div>
+              <p className="mt-2 text-muted-foreground">
+                Website, accessibility, SEO, domain, DNS, and security reviewed and written up as one prioritized report.
+              </p>
+            </div>
+            <div>
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Atomic Screen + Cloud</div>
+              <div className="mt-2 text-2xl font-semibold text-foreground">$199</div>
+              <p className="mt-2 text-muted-foreground">
+                Everything in the Atomic Screen plus a Google Workspace and Google Cloud audit.
+              </p>
+            </div>
+          </div>
           <div className="grid md:grid-cols-2 gap-4">
             {REVIEWS.map((r) => (
               <div key={r.t} className="atomic-card p-6">

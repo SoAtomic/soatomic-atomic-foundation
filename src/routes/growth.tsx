@@ -7,9 +7,9 @@ export const Route = createFileRoute("/growth")({
   head: () => ({
     meta: [
       { title: "Growth — SoAtomic" },
-      { name: "description", content: "Growth services are available after launch, billed at $125/hour or fixed project pricing. Steady, measurable improvement — not explosive promises." },
+      { name: "description", content: "Business automations using pre-built Formulas or custom solutions — starting at $250. Steady, measurable improvement." },
       { property: "og:title", content: "Growth — SoAtomic" },
-      { property: "og:description", content: "Accessibility, SEO, analytics, automation, AI integration, and content strategy — done in increments, with reasons attached." },
+      { property: "og:description", content: "Pre-built Formulas from $250. Custom Solutions from $500. Automations, integrations, and steady improvement." },
     ],
   }),
   component: GrowthPage,
@@ -38,17 +38,23 @@ function GrowthPage() {
       />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="crt-card p-6 md:p-8 flex flex-wrap items-baseline gap-6">
-            <div>
-              <div className="font-mono-soa text-primary uppercase tracking-widest">How it is billed</div>
-              <div className="mt-2 text-2xl font-semibold text-foreground">$125/hour</div>
-              <div className="text-muted-foreground">or fixed project pricing on request</div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="crt-card p-6 md:p-8">
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Pre-Built Formulas</div>
+              <div className="mt-2 text-2xl font-semibold text-foreground">Starting at $250</div>
+              <p className="mt-3 text-muted-foreground">
+                Ready-made automations for the workflows most organizations
+                repeat — deployed, documented, and handed off.
+              </p>
             </div>
-            <p className="text-muted-foreground max-w-xl">
-              Growth work is scoped one project at a time. Larger initiatives
-              can be quoted as fixed engagements; smaller improvements
-              typically run on a small monthly retainer of hours.
-            </p>
+            <div className="crt-card p-6 md:p-8">
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Custom Solutions</div>
+              <div className="mt-2 text-2xl font-semibold text-foreground">Starting at $500</div>
+              <p className="mt-3 text-muted-foreground">
+                Scoped, one-off automations built to fit a specific process,
+                with a written scope before anything begins.
+              </p>
+            </div>
           </div>
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {SERVICES.map((s) => (
