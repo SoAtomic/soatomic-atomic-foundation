@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScreenRouteImport } from './routes/screen'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as GrowthRouteImport } from './routes/growth'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as BuildRouteImport } from './routes/build'
 import { Route as IndexRouteImport } from './routes/index'
@@ -26,6 +27,11 @@ const ScreenRoute = ScreenRouteImport.update({
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrowthRoute = GrowthRouteImport.update({
+  id: '/growth',
+  path: '/growth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareRoute = CareRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/'
     | '/build'
     | '/care'
+    | '/growth'
     | '/mcp'
     | '/screen'
     | '/.mcp/list-tools'
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/'
     | '/build'
     | '/care'
+    | '/growth'
     | '/mcp'
     | '/screen'
     | '/.mcp/list-tools'
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/'
     | '/build'
     | '/care'
+    | '/growth'
     | '/mcp'
     | '/screen'
     | '/.mcp/list-tools'
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BuildRoute: typeof BuildRoute
   CareRoute: typeof CareRoute
+  GrowthRoute: typeof GrowthRoute
   McpRoute: typeof McpRoute
   ScreenRoute: typeof ScreenRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/growth': {
+      id: '/growth'
+      path: '/growth'
+      fullPath: '/growth'
+      preLoaderRoute: typeof GrowthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/care': {
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BuildRoute: BuildRoute,
   CareRoute: CareRoute,
+  GrowthRoute: GrowthRoute,
   McpRoute: McpRoute,
   ScreenRoute: ScreenRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
