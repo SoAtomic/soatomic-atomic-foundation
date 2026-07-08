@@ -76,7 +76,9 @@ export function ContactForm() {
         {submitting ? "Sending…" : "Schedule a Digital Foundation Audit"} <ArrowRight />
       </Button>
       <p className="text-muted-foreground text-center">
-        One reply, within one business day. No mailing list.
+        One reply, within one business day.
+        <br />
+        No mailing list.
       </p>
     </form>
   );
