@@ -228,64 +228,6 @@ function Ticker() {
   );
 }
 
-/* ---------- Manifesto ---------- */
-function Manifesto() {
-  const yes = [
-    "Portable systems you actually own",
-    "Plain-English recommendations",
-    "Web + SEO + AI + Ops in one place",
-    "Small, sharp, accountable scope",
-  ];
-  const no = [
-    "10-person Slack channels for a headline change",
-    "Mystery platforms you can't escape",
-    "SEO theater and AI sparkle without a plan",
-    "Quarterly retainers for monthly silence",
-  ];
-  return (
-    <section className="py-24 border-t border-border/60 relative overflow-hidden">
-      <div aria-hidden className="absolute inset-0 dot-grid-bg opacity-[0.18]" style={{maskImage:"linear-gradient(180deg, transparent, black, transparent)"}}/>
-      <div className="mx-auto max-w-6xl px-6 relative">
-        <div className="flex items-end justify-between gap-6 flex-wrap">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-semibold max-w-3xl leading-[1.05] text-foreground">
-              Anti-bloat. Pro-clarity. Built for the people who actually run the business.
-            </h2>
-          </div>
-        </div>
-        <div className="mt-12 grid md:grid-cols-2 gap-5">
-          <div className="atomic-card p-7">
-            <div className="flex items-center gap-2 font-mono-soa text-xs uppercase tracking-widest text-primary font-bold">
-              <Check className="h-3.5 w-3.5"/> What SoAtomic is
-            </div>
-            <ul className="mt-5 space-y-3">
-              {yes.map(t => (
-                <li key={t} className="flex items-start gap-3 text-sm md:text-base">
-                  <span className="mt-1.5 h-1.5 w-1.5 bg-primary shrink-0"/>
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="atomic-card p-7">
-            <div className="flex items-center gap-2 font-mono-soa text-xs uppercase tracking-widest text-muted-foreground font-bold">
-              <X className="h-3.5 w-3.5"/> What it isn't
-            </div>
-            <ul className="mt-5 space-y-3">
-              {no.map(t => (
-                <li key={t} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground line-through decoration-border decoration-1">
-                  <span className="mt-1.5 h-1.5 w-1.5 bg-border shrink-0"/>
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------- Section helpers ---------- */
 function SectionHeader({ title, sub, accent, white, green }: { title: string; sub?: string; accent?: boolean; white?: boolean; green?: boolean }) {
   return (
