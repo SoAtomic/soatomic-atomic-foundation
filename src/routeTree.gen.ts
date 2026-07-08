@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScreenRouteImport } from './routes/screen'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as GrowthRouteImport } from './routes/growth'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -30,6 +31,11 @@ const ScreenRoute = ScreenRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaybookRoute = PlaybookRouteImport.update({
+  id: '/playbook',
+  path: '/playbook',
   getParentRoute: () => rootRouteImport,
 } as any)
 const McpRoute = McpRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
+  '/playbook': typeof PlaybookRoute
   '/pricing': typeof PricingRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
+  '/playbook': typeof PlaybookRoute
   '/pricing': typeof PricingRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
+  '/playbook': typeof PlaybookRoute
   '/pricing': typeof PricingRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/growth'
     | '/mcp'
+    | '/playbook'
     | '/pricing'
     | '/screen'
     | '/.mcp/list-tools'
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/growth'
     | '/mcp'
+    | '/playbook'
     | '/pricing'
     | '/screen'
     | '/.mcp/list-tools'
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/growth'
     | '/mcp'
+    | '/playbook'
     | '/pricing'
     | '/screen'
     | '/.mcp/list-tools'
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GrowthRoute: typeof GrowthRoute
   McpRoute: typeof McpRoute
+  PlaybookRoute: typeof PlaybookRoute
   PricingRoute: typeof PricingRoute
   ScreenRoute: typeof ScreenRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
@@ -203,6 +216,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playbook': {
+      id: '/playbook'
+      path: '/playbook'
+      fullPath: '/playbook'
+      preLoaderRoute: typeof PlaybookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GrowthRoute: GrowthRoute,
   McpRoute: McpRoute,
+  PlaybookRoute: PlaybookRoute,
   PricingRoute: PricingRoute,
   ScreenRoute: ScreenRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
