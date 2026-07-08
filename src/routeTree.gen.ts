@@ -13,6 +13,7 @@ import { Route as ScreenRouteImport } from './routes/screen'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as GrowthRouteImport } from './routes/growth'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as BuildRouteImport } from './routes/build'
 import { Route as AboutRouteImport } from './routes/about'
@@ -39,6 +40,11 @@ const McpRoute = McpRouteImport.update({
 const GrowthRoute = GrowthRouteImport.update({
   id: '/growth',
   path: '/growth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareRoute = CareRouteImport.update({
@@ -85,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -98,6 +105,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -112,6 +120,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -127,6 +136,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/build'
     | '/care'
+    | '/faq'
     | '/growth'
     | '/mcp'
     | '/pricing'
@@ -140,6 +150,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/build'
     | '/care'
+    | '/faq'
     | '/growth'
     | '/mcp'
     | '/pricing'
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/build'
     | '/care'
+    | '/faq'
     | '/growth'
     | '/mcp'
     | '/pricing'
@@ -167,6 +179,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BuildRoute: typeof BuildRoute
   CareRoute: typeof CareRoute
+  FaqRoute: typeof FaqRoute
   GrowthRoute: typeof GrowthRoute
   McpRoute: typeof McpRoute
   PricingRoute: typeof PricingRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       path: '/growth'
       fullPath: '/growth'
       preLoaderRoute: typeof GrowthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/care': {
@@ -263,6 +283,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BuildRoute: BuildRoute,
   CareRoute: CareRoute,
+  FaqRoute: FaqRoute,
   GrowthRoute: GrowthRoute,
   McpRoute: McpRoute,
   PricingRoute: PricingRoute,
