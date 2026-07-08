@@ -24,28 +24,28 @@ const BUILDS = [
     next: "Book a Digital Foundation Audit.",
   },
   {
-    name: "Carbon", price: "$1,500", timeline: "2–4 weeks",
+    name: "Carbon", price: "$800", timeline: "2–4 weeks",
     best: "A small organization needing a complete website.",
     included: ["2–8 pages", "Contact forms", "Basic CMS where appropriate", "SEO foundations", "Accessibility review", "Analytics", "Documentation", "Administrator training"],
     excluded: ["Advanced CMS collections", "E-commerce"],
     next: "Book a Digital Foundation Audit.",
   },
   {
-    name: "Titanium", price: "$3,000", timeline: "4–6 weeks",
+    name: "Titanium", price: "$1,200", timeline: "4–6 weeks",
     best: "An organization publishing content regularly.",
     included: ["Up to 10 pages", "CMS collections", "Blog or news", "Staff directory", "Search", "SEO configuration", "Documentation", "Administrator training"],
     excluded: ["E-commerce", "Custom applications"],
     next: "Book a Digital Foundation Audit.",
   },
   {
-    name: "Gold", price: "$5,000", timeline: "6–8 weeks",
+    name: "Gold", price: "$1,700", timeline: "6–8 weeks",
     best: "An organization selling products online.",
     included: ["Shopify configuration", "Product collections", "Payments", "Shipping", "Taxes", "Customer notifications", "SEO", "Documentation", "Training"],
     excluded: ["Ongoing merchandising", "Fulfillment operations"],
     next: "Book a Digital Foundation Audit.",
   },
   {
-    name: "Plutonium", price: "$2,500", timeline: "Varies",
+    name: "Plutonium", price: "$2,000", timeline: "Varies",
     best: "Google Cloud infrastructure or custom web applications.",
     included: ["Google Cloud architecture", "Cloud Run deployment", "Cloud Storage", "IAM", "Monitoring", "Logging", "Security review", "Deployment guide"],
     excluded: ["Windows or Active Directory environments", "On-premises hardware"],
@@ -54,11 +54,11 @@ const BUILDS = [
 ];
 
 const CARE = [
-  { name: "Hydrogen Care", price: "$49/month", best: "Hydrogen sites.", includes: ["Security updates", "Monthly health review", "30 min content updates", "Email support"] },
-  { name: "Carbon Care", price: "$99/month", best: "Carbon sites.", includes: ["+ One hour of updates", "+ Analytics review", "+ Quarterly review", "+ Priority support"] },
-  { name: "Titanium Care", price: "$199/month", best: "Titanium sites.", includes: ["+ Google Workspace admin", "+ DNS management", "+ Accessibility review", "+ Two hours of updates"] },
-  { name: "Gold Care", price: "$299/month", best: "Gold stores.", includes: ["+ Shopify support", "+ Product updates", "+ Store monitoring", "+ E-commerce troubleshooting"] },
-  { name: "Plutonium Care", price: "$499/month", best: "Plutonium infrastructure.", includes: ["+ Cloud monitoring", "+ Infrastructure maintenance", "+ Deployment assistance", "+ Performance optimization"] },
+  { name: "Hydrogen Care", price: "$100/month", best: "Hydrogen sites.", includes: ["Security updates", "Monthly health review", "30 min content updates", "Email support"] },
+  { name: "Carbon Care", price: "$200/month", best: "Carbon sites.", includes: ["+ One hour of updates", "+ Analytics review", "+ Quarterly review", "+ Priority support"] },
+  { name: "Titanium Care", price: "$300/month", best: "Titanium sites.", includes: ["+ Google Workspace admin", "+ DNS management", "+ Accessibility review", "+ Two hours of updates"] },
+  { name: "Gold Care", price: "$400/month", best: "Gold stores.", includes: ["+ Shopify support", "+ Product updates", "+ Store monitoring", "+ E-commerce troubleshooting"] },
+  { name: "Plutonium Care", price: "$500/month", best: "Plutonium infrastructure.", includes: ["+ Cloud monitoring", "+ Infrastructure maintenance", "+ Deployment assistance", "+ Performance optimization"] },
 ];
 
 function PricingPage() {
@@ -157,18 +157,26 @@ function PricingPage() {
 
       <section className="py-20 border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6">
-          <H2 eyebrow="Growth services" sub="Growth work is billed hourly or as a fixed-scope project.">
+          <H2 eyebrow="Growth services" sub="Business automations, priced per project.">
             Growth.
           </H2>
-          <div className="mt-8 crt-card p-6 md:p-8">
-            <div className="text-2xl font-semibold text-foreground">$125/hour</div>
-            <p className="mt-2 text-muted-foreground">
-              Or fixed project pricing on request. See the{" "}
-              <Link to="/growth" className="text-primary hover:underline">
-                Growth division
-              </Link>{" "}
-              for the current list of services.
-            </p>
+          <div className="mt-8 grid md:grid-cols-2 gap-4">
+            <div className="crt-card p-6 md:p-8">
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Pre-Built Formulas</div>
+              <div className="mt-2 text-2xl font-semibold text-foreground">Starting at $250</div>
+              <p className="mt-2 text-muted-foreground">
+                Ready-made automations for common workflows — deployed and documented.
+              </p>
+            </div>
+            <div className="crt-card p-6 md:p-8">
+              <div className="font-mono-soa text-primary uppercase tracking-widest">Custom Solutions</div>
+              <div className="mt-2 text-2xl font-semibold text-foreground">Starting at $500</div>
+              <p className="mt-2 text-muted-foreground">
+                Scoped, one-off automations built to fit your specific process. See the{" "}
+                <Link to="/growth" className="text-primary hover:underline">Growth division</Link>{" "}
+                for the current list of services.
+              </p>
+            </div>
           </div>
         </div>
       </section>

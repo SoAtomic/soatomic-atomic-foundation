@@ -17,23 +17,23 @@ export const Route = createFileRoute("/care")({
 
 const PLANS = [
   {
-    name: "Hydrogen Care", price: "$49",
+    name: "Hydrogen Care", price: "$100",
     includes: ["Security updates", "Monthly health review", "30 minutes of content updates", "Email support"],
   },
   {
-    name: "Carbon Care", price: "$99",
+    name: "Carbon Care", price: "$200",
     includes: ["Everything in Hydrogen Care", "One hour of updates", "Analytics review", "Quarterly website review", "Priority support"],
   },
   {
-    name: "Titanium Care", price: "$199",
+    name: "Titanium Care", price: "$300",
     includes: ["Everything in Carbon Care", "Google Workspace administration", "DNS management", "Accessibility review", "Two hours of updates", "Documentation maintenance"],
   },
   {
-    name: "Gold Care", price: "$299",
+    name: "Gold Care", price: "$400",
     includes: ["Everything in Titanium Care", "Shopify support", "Product updates", "Store monitoring", "E-commerce troubleshooting"],
   },
   {
-    name: "Plutonium Care", price: "$499",
+    name: "Plutonium Care", price: "$500",
     includes: ["Everything in Gold Care", "Google Cloud monitoring", "Infrastructure maintenance", "Deployment assistance", "Security reviews", "Performance optimization"],
   },
 ];
