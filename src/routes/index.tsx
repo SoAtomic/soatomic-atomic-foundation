@@ -688,8 +688,8 @@ function Contact() {
       <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-2 gap-12">
         <div>
           <SectionHeader
-            title="Start with an Atomic Screen."
-            sub="Get a clear view of what is working, what is broken, and what to fix first."
+            title="Start with a Screen."
+            sub="A short conversation, then a written review of what exists and what should happen next. If we are not the right workshop for the job, we will say so."
             green
           />
           <div className="mt-8 atomic-card p-6">
@@ -709,12 +709,12 @@ function Contact() {
             <Field id="website" label="Website URL"><Input id="website" name="website" maxLength={200} placeholder="https://…" /></Field>
           </div>
           <Field id="needs" label="What do you need help with?" required>
-            <Textarea id="needs" name="needs" required maxLength={1500} rows={5} placeholder="A few sentences about your situation." />
+            <Textarea id="needs" name="needs" required maxLength={1500} rows={5} placeholder="A few sentences about your organization and what you are trying to do." />
           </Field>
           <Button type="submit" size="lg" disabled={submitting} className="w-full rounded-full font-semibold glow-ring">
-            {submitting ? "Sending…" : "Book an Atomic Screen"} <ArrowRight />
+            {submitting ? "Sending…" : "Request a Screen"} <ArrowRight />
           </Button>
-          <p className="text-xs text-muted-foreground text-center">No spam. Reply within one business day.</p>
+          <p className="text-xs text-muted-foreground text-center">One reply, within one business day. No mailing list.</p>
         </form>
       </div>
     </section>
@@ -734,20 +734,40 @@ function Field({ id, label, required, children }: { id: string; label: string; r
 
 /* ---------- Footer ---------- */
 function Footer() {
+  const tools = ["Google Workspace", "Google Cloud", "Cloudflare", "Webflow", "Framer", "Lovable"];
+  const links = [
+    { href: "#playbook", label: "Playbook" },
+    { href: "#screen", label: "Workshop Principles" },
+    { href: "#care", label: "Accessibility" },
+    { href: "#care", label: "Privacy" },
+  ];
   return (
-    <footer className="border-t border-border/60 py-12">
-      <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-        <div className="flex flex-col items-start gap-2">
+    <footer className="border-t border-border/60 py-16">
+      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-4 gap-10">
+        <div className="md:col-span-2 flex flex-col items-start gap-3">
           <SoAtomicLogo className="h-[4.5rem] w-auto" />
-          <div className="text-sm text-muted-foreground">Web. SEO. AI. Digital Operations.</div>
+          <div className="font-mono-soa text-primary uppercase tracking-widest">Digital Workshop</div>
+          <div className="text-muted-foreground">Santa Cruz County, California</div>
+          <a href="mailto:hello@soatomic.com" className="text-foreground hover:text-primary">hello@soatomic.com</a>
         </div>
-        <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-          <a href="#services" className="hover:text-foreground">Services</a>
-          <a href="#process" className="hover:text-foreground">Process</a>
-          <a href="#contact" className="hover:text-foreground">Contact</a>
-          <a href="mailto:hello@soatomic.com" className="hover:text-foreground">hello@soatomic.com</a>
+        <div>
+          <div className="font-mono-soa text-primary uppercase tracking-widest">Toolchain</div>
+          <ul className="mt-3 space-y-2 text-muted-foreground">
+            {tools.map(t => <li key={t}>{t}</li>)}
+          </ul>
         </div>
-        <div className="text-xs text-muted-foreground">© {new Date().getFullYear()} SoAtomic · Santa Cruz, CA</div>
+        <div>
+          <div className="font-mono-soa text-primary uppercase tracking-widest">Workshop</div>
+          <ul className="mt-3 space-y-2 text-muted-foreground">
+            {links.map(l => (
+              <li key={l.label}><a href={l.href} className="hover:text-foreground">{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-border/60 flex flex-wrap justify-between gap-3 text-muted-foreground">
+        <div>© {new Date().getFullYear()} SoAtomic · A boutique digital workshop</div>
+        <div>Approximately ten clients per year, by design.</div>
       </div>
     </footer>
   );
