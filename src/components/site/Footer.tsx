@@ -21,7 +21,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 py-16 mt-8">
       <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-4 gap-6">
-        <div className="md:col-span-1 flex flex-col items-start gap-3">
+        <div className="md:col-span-1 flex flex-col items-start gap-5">
           <SoAtomicLogo className="h-[4rem] w-auto" />
           <div className="font-mono-soa text-primary uppercase tracking-widest">
             SoAtomic Digital Studio
