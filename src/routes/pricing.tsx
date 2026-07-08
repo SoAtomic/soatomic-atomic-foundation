@@ -72,8 +72,10 @@ function PricingPage() {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <H2 eyebrow="Build packages">Build.</H2>
-          <div className="mt-10 overflow-x-auto">
+          <div className="md:pl-6">
+            <H2 eyebrow="Build packages">Build.</H2>
+          </div>
+          <div className="mt-10 overflow-x-auto md:pl-6">
             <table className="w-full min-w-[900px] border-collapse">
               <thead>
                 <tr className="text-left border-b border-border">
