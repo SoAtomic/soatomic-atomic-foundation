@@ -1,7 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BookOpen, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { PageHead, H2 } from "@/components/site/SectionHeader";
 import { CtaBanner } from "@/components/site/CtaBanner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/playbook")({
   head: () => ({
