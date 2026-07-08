@@ -72,7 +72,7 @@ const TEASERS = [
   {
     title: "Working Methods",
     body: [
-      "Every project follows the same workshop process: Screen, Blueprint, Build, Launch, Care, and Grow. Each stage has a clear purpose, defined deliverables, and measurable outcomes.",
+      "Every project follows the same process: Screen, Blueprint, Build, Launch, Care, and Grow. Each stage has a clear purpose, defined deliverables, and measurable outcomes.",
       "This structured approach keeps projects organized, reduces surprises, and ensures every decision is made with a clear understanding of both today's needs and tomorrow's maintenance.",
     ],
   },
