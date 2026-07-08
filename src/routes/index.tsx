@@ -214,7 +214,7 @@ function MaximsPreview() {
           {maxims.map((m, i) => (
             <div key={m} className="crt-card p-5">
               <div className="font-mono-soa text-primary uppercase tracking-widest">
-                Maxim {String(i + 1).padStart(2, "0")}
+                Rule {String(i + 1).padStart(2, "0")}
               </div>
               <p className="mt-3 text-foreground font-semibold leading-snug">{m}</p>
             </div>
