@@ -13,7 +13,7 @@ export const Route = createFileRoute("/playbook")({
   head: () => ({
     meta: [
       { title: "Playbook — SoAtomic" },
-      { name: "description", content: "The SoAtomic Playbook describes how the workshop operates: principles, boundaries, documentation standards, technology standards, ownership philosophy, and working methods." },
+      { name: "description", content: "The SoAtomic Playbook describes how the studio operates: principles, boundaries, documentation standards, technology standards, ownership philosophy, and working methods." },
       { property: "og:title", content: "Playbook — SoAtomic" },
       { property: "og:description", content: "The internal document that defines how SoAtomic works. Written down so clients know what to expect." },
     ],
@@ -35,7 +35,7 @@ const MAXIMS = [
 
 const TEASERS = [
   {
-    title: "Workshop Principles",
+    title: "Studio Principles",
     body: [
       "We are guided by a set of principles that shape how decisions are made. At SoAtomic, those principles include transparency, simplicity, documentation, accessibility, security, and long-term thinking.",
       "These aren't marketing promises—they're practical commitments that influence every recommendation, every project, and every line of work we deliver.",
@@ -44,7 +44,7 @@ const TEASERS = [
   {
     title: "Service Boundaries",
     body: [
-      "Knowing what we don't do is just as important as knowing what we do. The Playbook clearly defines the workshop's areas of expertise so clients always know what to expect.",
+      "Knowing what we don't do is just as important as knowing what we do. The Playbook clearly defines the studio's areas of expertise so clients always know what to expect.",
       "By maintaining clear service boundaries, we can focus on delivering exceptional work within our specialty instead of trying to be everything to everyone.",
     ],
   },
@@ -83,7 +83,7 @@ function PlaybookPage() {
     <>
       <PageHead
         eyebrow="The SoAtomic Playbook"
-        title="The workshop, written down."
+        title="The studio, written down."
         sub="The Playbook is the internal reference that defines how SoAtomic operates. It is not marketing. It is the document we work from, and the reason clients know what to expect from us."
       />
 
@@ -92,10 +92,10 @@ function PlaybookPage() {
           <h2 className="text-3xl md:text-4xl font-semibold">Inside the Playbook</h2>
           <div className="mt-6 space-y-4 text-lg text-muted-foreground">
             <p>
-              The SoAtomic Playbook is the workshop's operating manual. It explains how projects are planned, built, documented, and supported from beginning to end. Rather than relying on unwritten practices, the Playbook defines the standards that guide every client engagement.
+              The SoAtomic Playbook is the studio's operating manual. It explains how projects are planned, built, documented, and supported from beginning to end. Rather than relying on unwritten practices, the Playbook defines the standards that guide every client engagement.
             </p>
             <p>
-              Whether you're considering your first project or have worked with us for years, the Playbook provides a clear picture of how the workshop operates and what you can expect from every stage of the relationship.
+              Whether you're considering your first project or have worked with us for years, the Playbook provides a clear picture of how the studio operates and what you can expect from every stage of the relationship.
             </p>
           </div>
           <Accordion type="single" collapsible className="mt-10">
@@ -124,8 +124,8 @@ function PlaybookPage() {
           style={{ maskImage: "linear-gradient(180deg, transparent, black, transparent)" }}
         />
         <div className="mx-auto max-w-7xl px-6 relative">
-          <H2 eyebrow="Workshop Rules" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
-            The Workshop Rules.
+          <H2 eyebrow="Studio Rules" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
+            SoAtomic Rules.
           </H2>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {MAXIMS.map((m, i) => (
@@ -173,7 +173,7 @@ function PlaybookPage() {
 
       <section className="py-20 border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6">
-          <H2 eyebrow="Process" sub="Six connected stages describe how a project moves through the workshop.">
+          <H2 eyebrow="Process" sub="Six connected stages describe how a project moves through the studio.">
             Screen → Blueprint → Build → Launch → Care → Grow.
           </H2>
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -196,7 +196,7 @@ function PlaybookPage() {
       </section>
 
       <CtaBanner
-        title="Ready to visit the workshop?"
+        title="Ready to visit the studio?"
         body="A Digital Foundation Audit is the first step. It results in a written document you own, whether or not we continue together."
         primaryLabel="Schedule a Digital Foundation Audit"
       />

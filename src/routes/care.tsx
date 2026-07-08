@@ -9,7 +9,7 @@ export const Route = createFileRoute("/care")({
       { title: "Care — SoAtomic" },
       { name: "description", content: "Monthly care plans that keep websites, workspaces, and infrastructure healthy after launch. Five plans matched to the five build packages." },
       { property: "og:title", content: "Care — SoAtomic" },
-      { property: "og:description", content: "Monthly workshop care — updates, monitoring, documentation, and a real person who already knows your setup." },
+      { property: "og:description", content: "Monthly studio care — updates, monitoring, documentation, and a real person who already knows your setup." },
     ],
   }),
   component: CarePage,
@@ -43,7 +43,7 @@ function CarePage() {
     <>
       <PageHead
         eyebrow="Service 03 · Care"
-        title="Monthly workshop care."
+        title="Monthly studio care."
         sub="After a build launches, most systems need quiet, ongoing attention. Care is the arrangement that keeps a foundation dependable without becoming your second job."
       />
       <section className="py-20">
