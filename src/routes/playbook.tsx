@@ -71,8 +71,8 @@ function PlaybookPage() {
           style={{ maskImage: "linear-gradient(180deg, transparent, black, transparent)" }}
         />
         <div className="mx-auto max-w-7xl px-6 relative">
-          <H2 eyebrow="Workshop Maxims" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
-            The Workshop Maxims.
+          <H2 eyebrow="Workshop Rules" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
+            The Workshop Rules.
           </H2>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {MAXIMS.map((m, i) => (
