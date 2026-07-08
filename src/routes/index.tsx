@@ -10,9 +10,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "SoAtomic — Digital Foundations Built to Last" },
-      { name: "description", content: "SoAtomic is a boutique digital workshop that helps nonprofits, community organizations, and service businesses build digital foundations they fully own and understand." },
+      { name: "description", content: "SoAtomic is a boutique digital studio that helps nonprofits, community organizations, and service businesses build digital foundations they fully own and understand." },
       { property: "og:title", content: "SoAtomic — Digital Foundations Built to Last" },
-      { property: "og:description", content: "A small workshop that builds documented, maintainable digital foundations for organizations doing meaningful work. Clients own everything." },
+      { property: "og:description", content: "A small studio that builds documented, maintainable digital foundations for organizations doing meaningful work. Clients own everything." },
     ],
   }),
   component: Home,
@@ -49,7 +49,7 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
           <div className="font-mono-soa text-primary uppercase tracking-widest mb-4">
-            A boutique digital workshop
+            A boutique digital studio
           </div>
           <h1 className="text-4xl md:text-6xl font-semibold leading-[1.1] text-foreground">
             Digital Foundations Built to Last.
@@ -73,7 +73,7 @@ function Hero() {
             </Link>
           </div>
           <p className="mt-6 text-muted-foreground max-w-xl">
-            The workshop intentionally accepts approximately ten clients per
+            The studio intentionally accepts approximately ten clients per
             year so every engagement receives careful attention.
           </p>
         </div>
@@ -85,7 +85,7 @@ function Hero() {
   );
 }
 
-/* ---------- Four workshop services ---------- */
+/* ---------- Four studio services ---------- */
 function Services() {
   const divs = [
     { to: "/screen", icon: Search,     num: "01", title: "Screen",
@@ -100,8 +100,8 @@ function Services() {
   return (
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
-        <H2 eyebrow="Workshop Services" sub="Four connected services handle every stage of a client relationship, from first review through long-term care.">
-          The four services of the workshop.
+        <H2 eyebrow="Studio Services" sub="Four connected services handle every stage of a client relationship, from first review through long-term care.">
+          The four services of the studio.
         </H2>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {divs.map((d) => (
@@ -207,8 +207,8 @@ function MaximsPreview() {
         style={{ maskImage: "linear-gradient(180deg, transparent, black, transparent)" }}
       />
       <div className="mx-auto max-w-7xl px-6 relative">
-        <H2 eyebrow="Workshop Rules" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
-          How the workshop thinks.
+        <H2 eyebrow="Studio Rules" sub="A short set of rules that shape every project. Not slogans — the constraints we work inside.">
+          How the studio thinks.
         </H2>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {maxims.map((m, i) => (
@@ -238,8 +238,8 @@ function ProcessPreview() {
   return (
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
-        <H2 eyebrow="Process" sub="Six connected stages describe how a project moves through the workshop.">
-          The workshop workflow.
+        <H2 eyebrow="Process" sub="Six connected stages describe how a project moves through the studio.">
+          The studio workflow.
         </H2>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {steps.map((s) => (
@@ -260,8 +260,8 @@ function PlaybookTeaser() {
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-7">
-          <H2 eyebrow="The SoAtomic Playbook" sub="The internal document that defines how the workshop operates: principles, boundaries, documentation standards, technology standards, and ownership philosophy.">
-            The workshop, written down.
+          <H2 eyebrow="The SoAtomic Playbook" sub="The internal document that defines how the studio operates: principles, boundaries, documentation standards, technology standards, and ownership philosophy.">
+            The studio, written down.
           </H2>
           <div className="mt-8">
             <Link to="/playbook">
@@ -275,7 +275,7 @@ function PlaybookTeaser() {
           <div className="crt-card p-6">
             <div className="font-mono-soa text-primary uppercase tracking-widest">Contents</div>
             <ul className="mt-4 space-y-2">
-              {["Workshop principles","Service boundaries","Documentation standards","Technology standards","Ownership philosophy","Working methods"].map((t) => (
+              {["Studio principles","Service boundaries","Documentation standards","Technology standards","Ownership philosophy","Working methods"].map((t) => (
                 <li key={t} className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 bg-primary shrink-0" />
                   <span>{t}</span>
