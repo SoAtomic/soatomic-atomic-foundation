@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScreenRouteImport } from './routes/screen'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as GrowthRouteImport } from './routes/growth'
 import { Route as CareRouteImport } from './routes/care'
@@ -22,6 +23,11 @@ import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[
 const ScreenRoute = ScreenRouteImport.update({
   id: '/screen',
   path: '/screen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const McpRoute = McpRouteImport.update({
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/care': typeof CareRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
+  '/pricing': typeof PricingRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/care': typeof CareRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
+  '/pricing': typeof PricingRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/care': typeof CareRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
+  '/pricing': typeof PricingRoute
   '/screen': typeof ScreenRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/care'
     | '/growth'
     | '/mcp'
+    | '/pricing'
     | '/screen'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/care'
     | '/growth'
     | '/mcp'
+    | '/pricing'
     | '/screen'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/care'
     | '/growth'
     | '/mcp'
+    | '/pricing'
     | '/screen'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   CareRoute: typeof CareRoute
   GrowthRoute: typeof GrowthRoute
   McpRoute: typeof McpRoute
+  PricingRoute: typeof PricingRoute
   ScreenRoute: typeof ScreenRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -157,6 +170,13 @@ declare module '@tanstack/react-router' {
       path: '/screen'
       fullPath: '/screen'
       preLoaderRoute: typeof ScreenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareRoute: CareRoute,
   GrowthRoute: GrowthRoute,
   McpRoute: McpRoute,
+  PricingRoute: PricingRoute,
   ScreenRoute: ScreenRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
