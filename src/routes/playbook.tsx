@@ -88,21 +88,32 @@ function PlaybookPage() {
       />
 
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-12 gap-10 items-start">
-          <div className="md:col-span-5">
-            <H2 eyebrow="Contents">What the Playbook covers.</H2>
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="text-3xl md:text-4xl font-semibold">Inside the Playbook</h2>
+          <div className="mt-6 space-y-4 text-lg text-muted-foreground">
+            <p>
+              The SoAtomic Playbook is the workshop's operating manual. It explains how projects are planned, built, documented, and supported from beginning to end. Rather than relying on unwritten practices, the Playbook defines the standards that guide every client engagement.
+            </p>
+            <p>
+              Whether you're considering your first project or have worked with us for years, the Playbook provides a clear picture of how the workshop operates and what you can expect from every stage of the relationship.
+            </p>
           </div>
-          <div className="md:col-span-7 grid gap-4">
-            {CONTENTS.map((c) => (
-              <div key={c.t} className="atomic-card p-5">
-                <div className="flex items-center gap-3">
-                  <BookOpen className="h-4 w-4 text-primary" />
-                  <h3 className="font-semibold text-foreground">{c.t}</h3>
-                </div>
-                <p className="mt-2 text-muted-foreground">{c.d}</p>
-              </div>
+          <Accordion type="single" collapsible className="mt-10">
+            {TEASERS.map((t) => (
+              <AccordionItem key={t.title} value={t.title}>
+                <AccordionTrigger className="text-left text-lg text-foreground">
+                  {t.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-4">
+                    {t.body.map((p, i) => (
+                      <p key={i} className="text-muted-foreground">{p}</p>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
