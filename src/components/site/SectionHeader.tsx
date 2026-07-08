@@ -5,7 +5,7 @@ export function SectionHeader({
   green,
 }: {
   eyebrow?: string;
-  title: string;
+  title: React.ReactNode;
   sub?: string;
   green?: boolean;
 }) {
@@ -57,7 +57,7 @@ export function PageHead({
   sub,
 }: {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   sub?: string;
 }) {
   return (
