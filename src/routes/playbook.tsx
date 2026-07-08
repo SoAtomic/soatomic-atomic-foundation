@@ -58,7 +58,7 @@ const TEASERS = [
   {
     title: "Technology Standards",
     body: [
-      "The workshop intentionally works with a carefully selected technology stack rather than every platform available. By focusing on trusted tools, we can provide deeper expertise, stronger support, and more consistent long-term results.",
+      "We intentionally work with a carefully selected technology stack rather than every platform available. By focusing on trusted tools, we can provide deeper expertise, stronger support, and more consistent long-term results.",
       "Every technology we recommend is chosen because it aligns with our values of reliability, security, maintainability, and client ownership—not because it's the newest trend.",
     ],
   },
