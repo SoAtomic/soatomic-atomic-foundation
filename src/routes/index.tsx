@@ -23,7 +23,7 @@ function Home() {
     <>
       <Hero />
       <Ticker />
-      <Divisions />
+      <Services />
       <EveryProject />
       <WhoWeServe />
       <MaximsPreview />

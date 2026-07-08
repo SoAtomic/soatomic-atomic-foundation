@@ -10,7 +10,7 @@ const WORKSHOP = [
   { to: "/pricing", label: "Pricing" },
 ] as const;
 
-const DIVISIONS = [
+const SERVICES = [
   { to: "/screen", label: "Screen" },
   { to: "/build", label: "Build" },
   { to: "/care", label: "Care" },
@@ -32,9 +32,9 @@ export function Footer() {
           </a>
         </div>
         <div>
-          <div className="font-mono-soa text-primary uppercase tracking-widest">Divisions</div>
+          <div className="font-mono-soa text-primary uppercase tracking-widest">Services</div>
           <ul className="mt-3 space-y-2 text-muted-foreground">
-            {DIVISIONS.map((l) => (
+            {SERVICES.map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="hover:text-foreground">{l.label}</Link>
               </li>
