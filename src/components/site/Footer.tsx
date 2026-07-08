@@ -3,9 +3,9 @@ import { SoAtomicLogo } from "./Logo";
 
 const TOOLS = ["Google Workspace", "Google Cloud", "Cloudflare", "Webflow", "Framer", "Lovable"];
 
-const WORKSHOP = [
+const STUDIO = [
   { to: "/playbook", label: "Playbook" },
-  { to: "/about", label: "Workshop Principles" },
+  { to: "/about", label: "Studio Principles" },
   { to: "/faq", label: "FAQ" },
   { to: "/pricing", label: "Pricing" },
 ] as const;
@@ -24,7 +24,7 @@ export function Footer() {
         <div className="md:col-span-1 flex flex-col items-start gap-3">
           <SoAtomicLogo className="h-[4rem] w-auto" />
           <div className="font-mono-soa text-primary uppercase tracking-widest">
-            SoAtomic Digital Workshop
+            SoAtomic Digital Studio
           </div>
           <div className="text-muted-foreground">Santa Cruz County, California</div>
           <a href="mailto:hello@soatomic.com" className="text-foreground hover:text-primary">
@@ -42,9 +42,9 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <div className="font-mono-soa text-primary uppercase tracking-widest">Workshop</div>
+          <div className="font-mono-soa text-primary uppercase tracking-widest">Studio</div>
           <ul className="mt-3 space-y-2 text-muted-foreground">
-            {WORKSHOP.map((l) => (
+            {STUDIO.map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="hover:text-foreground">{l.label}</Link>
               </li>
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-6 mt-10 pt-6 border-t border-border/60 flex flex-wrap justify-between gap-3 text-muted-foreground">
-        <div>© {new Date().getFullYear()} SoAtomic · A boutique digital workshop</div>
+        <div>© {new Date().getFullYear()} SoAtomic · A boutique digital studio</div>
         <div>Approximately ten clients per year, by design.</div>
       </div>
     </footer>

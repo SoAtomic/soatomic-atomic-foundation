@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — SoAtomic" },
       { name: "description", content: "Schedule a Digital Foundation Audit or ask a question. One reply per inquiry, within one business day. No mailing list." },
       { property: "og:title", content: "Contact — SoAtomic" },
-      { property: "og:description", content: "Reach the workshop. Every conversation starts with a short review of what you're trying to do." },
+      { property: "og:description", content: "Reach the studio. Every conversation starts with a short review of what you're trying to do." },
     ],
   }),
   component: ContactPage,
@@ -21,7 +21,7 @@ function ContactPage() {
       <PageHead
         eyebrow="Contact"
         title="Schedule a Digital Foundation Audit."
-        sub="A short message is enough to start. If the workshop is not a good fit for the work you're describing, we will say so directly and, when possible, suggest someone who is."
+        sub="A short message is enough to start. If the studio is not a good fit for the work you're describing, we will say so directly and, when possible, suggest someone who is."
       />
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12">
@@ -45,7 +45,7 @@ function ContactPage() {
                 What happens next
               </div>
               <ol className="mt-4 space-y-3 list-decimal pl-6 text-foreground/90">
-                <li>A short reply confirming the workshop can be helpful.</li>
+                <li>A short reply confirming the studio can be helpful.</li>
                 <li>A brief scoping conversation, in writing or by call.</li>
                 <li>A written Digital Foundation Audit proposal.</li>
               </ol>

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "FAQ — SoAtomic" },
-      { name: "description", content: "Answers to common questions about working with SoAtomic — how projects begin, who owns what, how pricing works, and why the workshop is intentionally small." },
+      { name: "description", content: "Answers to common questions about working with SoAtomic — how projects begin, who owns what, how pricing works, and why the studio is intentionally small." },
       { property: "og:title", content: "FAQ — SoAtomic" },
       { property: "og:description", content: "Working together, ownership, pricing, technology, support, and philosophy — answered plainly." },
     ],
@@ -29,7 +29,7 @@ const GROUPS: Group[] = [
     items: [
       { q: "How do projects begin?", a: "Every new project begins with a $99 Digital Foundation Screen. We'll review your current website, technology, and digital tools, then provide a Digital Foundation Report with prioritized recommendations and practical next steps. If you move forward with a Build package, we'll apply the full $99 toward your project." },
       { q: "Do you require contracts?", a: "Yes. Every project includes a straightforward agreement that outlines the scope of work, timeline, responsibilities, payment terms, and ownership. We believe clear expectations make for successful projects." },
-      { q: "How many clients do you accept each year?", a: "SoAtomic intentionally remains a boutique workshop. We generally work with around ten Build clients each year so every organization receives thoughtful attention, thorough documentation, and responsive support." },
+      { q: "How many clients do you accept each year?", a: "SoAtomic intentionally remains a boutique studio. We generally work with around ten Build clients each year so every organization receives thoughtful attention, thorough documentation, and responsive support." },
       { q: "Do you work remotely?", a: "Yes. Most of our work is completed remotely using video meetings, email, and collaborative tools. This allows us to serve organizations efficiently while keeping costs reasonable." },
       { q: "Do you work outside California?", a: "Absolutely. While we're based in Santa Cruz County, California, we work with organizations throughout the United States. Some services may have state-specific considerations, but most of our work can be completed remotely." },
     ],
@@ -81,7 +81,7 @@ const GROUPS: Group[] = [
     items: [
       { q: "Why don't you take many clients?", a: "Because quality requires time. We intentionally limit the number of organizations we work with so every client receives careful planning, thorough documentation, and thoughtful long-term support rather than becoming just another project in a queue." },
       { q: "Why don't you support every technology?", a: "No one can be an expert in everything. We deliberately focus on a carefully selected technology stack that we trust and understand deeply. That focus allows us to provide better advice, better documentation, and more dependable support." },
-      { q: "What is a Digital Workshop?", a: "A Digital Workshop is our way of approaching technology with craftsmanship rather than volume. We don't chase trends or sell unnecessary services. We build dependable digital foundations, document our work, and leave every organization in control of its technology." },
+      { q: "What is a Digital Studio?", a: "A Digital Studio is our way of approaching technology with craftsmanship rather than volume. We don't chase trends or sell unnecessary services. We build dependable digital foundations, document our work, and leave every organization in control of its technology." },
       { q: "Why do you avoid vendor lock-in?", a: "Technology should create independence, not dependence. We believe organizations should always own their accounts, domains, data, and documentation. If you ever choose to work with someone else, you should be able to do so without unnecessary barriers." },
       { q: "Why is documentation included with every project?", a: "Because good work should be understandable. Documentation helps your team maintain systems, onboard new staff, and make informed decisions long after a project is complete. We consider documentation part of the product — not an optional extra." },
     ],
