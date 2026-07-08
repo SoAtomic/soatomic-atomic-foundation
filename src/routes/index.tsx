@@ -85,8 +85,8 @@ function Hero() {
   );
 }
 
-/* ---------- Four workshop divisions ---------- */
-function Divisions() {
+/* ---------- Four workshop services ---------- */
+function Services() {
   const divs = [
     { to: "/screen", icon: Search,     num: "01", title: "Screen",
       body: "A written, prioritized review of what already exists — before anything is proposed or built." },
@@ -100,8 +100,8 @@ function Divisions() {
   return (
     <section className="py-24 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
-        <H2 eyebrow="Workshop Divisions" sub="Four connected divisions handle every stage of a client relationship, from first review through long-term care.">
-          The four divisions of the workshop.
+        <H2 eyebrow="Workshop Services" sub="Four connected services handle every stage of a client relationship, from first review through long-term care.">
+          The four services of the workshop.
         </H2>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {divs.map((d) => (
