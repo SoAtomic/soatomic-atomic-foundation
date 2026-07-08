@@ -153,9 +153,8 @@ function BuildPage() {
               </div>
             </article>
           ))}
-          <p className="text-muted-foreground max-w-3xl">
-            Every engagement starts with a Screen so the right package is
-            chosen for the work at hand — never sold up.
+          <p className="text-muted-foreground whitespace-nowrap">
+            Every engagement starts with a Screen so the right package is chosen for the work at hand — never sold up.
           </p>
         </div>
       </section>
