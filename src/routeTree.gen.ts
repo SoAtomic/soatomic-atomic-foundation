@@ -15,6 +15,7 @@ import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as GrowthRouteImport } from './routes/growth'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as BuildRouteImport } from './routes/build'
 import { Route as AboutRouteImport } from './routes/about'
@@ -51,6 +52,11 @@ const GrowthRoute = GrowthRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareRoute = CareRouteImport.update({
@@ -97,6 +103,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
@@ -112,6 +119,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
@@ -128,6 +136,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
+  '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/mcp': typeof McpRoute
@@ -145,6 +154,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/build'
     | '/care'
+    | '/contact'
     | '/faq'
     | '/growth'
     | '/mcp'
@@ -160,6 +170,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/build'
     | '/care'
+    | '/contact'
     | '/faq'
     | '/growth'
     | '/mcp'
@@ -175,6 +186,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/build'
     | '/care'
+    | '/contact'
     | '/faq'
     | '/growth'
     | '/mcp'
@@ -191,6 +203,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BuildRoute: typeof BuildRoute
   CareRoute: typeof CareRoute
+  ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   GrowthRoute: typeof GrowthRoute
   McpRoute: typeof McpRoute
@@ -244,6 +257,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/care': {
@@ -303,6 +323,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BuildRoute: BuildRoute,
   CareRoute: CareRoute,
+  ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   GrowthRoute: GrowthRoute,
   McpRoute: McpRoute,
