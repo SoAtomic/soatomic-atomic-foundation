@@ -114,7 +114,7 @@ function BuildPage() {
     <>
       <PageHead
         eyebrow="Division 02 · Build"
-        title="Five packages, named for their weight."
+        title={<span className="whitespace-nowrap">Five packages, named for their weight.</span>}
         sub="Each package is a defined shape with defined boundaries. Scope, deliverables, timeline, and starting price are stated plainly."
       />
       <section className="py-20">
