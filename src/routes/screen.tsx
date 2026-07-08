@@ -30,7 +30,7 @@ function ScreenPage() {
   return (
     <>
       <PageHead
-        eyebrow="Division 01 · Screen"
+        eyebrow="Service 01 · Screen"
         title="Every relationship begins with a Screen."
         sub="Before we quote a build or a care plan, we look at what already exists. The Screen produces a written, prioritized record of what is working, what is fragile, and what should be addressed next — whether or not we do the work."
       />

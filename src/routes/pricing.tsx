@@ -175,7 +175,7 @@ function PricingPage() {
               <div className="mt-2 text-2xl font-semibold text-foreground">Starting at $500</div>
               <p className="mt-2 text-muted-foreground">
                 Scoped, one-off automations built to fit your specific process. See the{" "}
-                <Link to="/growth" className="text-primary hover:underline">Growth division</Link>{" "}
+                <Link to="/growth" className="text-primary hover:underline">Growth service</Link>{" "}
                 for the current list of services.
               </p>
             </div>

@@ -32,7 +32,7 @@ function GrowthPage() {
   return (
     <>
       <PageHead
-        eyebrow="Division 04 · Growth"
+        eyebrow="Service 04 · Growth"
         title="Steady improvement. Not explosive promises."
         sub="Growth is the ongoing work of making a foundation more useful over time. We do not promise dramatic curves. We work in increments, measure before we change, and leave a paper trail of what moved and why."
       />

@@ -42,7 +42,7 @@ function CarePage() {
   return (
     <>
       <PageHead
-        eyebrow="Division 03 · Care"
+        eyebrow="Service 03 · Care"
         title="Monthly workshop care."
         sub="After a build launches, most systems need quiet, ongoing attention. Care is the arrangement that keeps a foundation dependable without becoming your second job."
       />

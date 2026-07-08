@@ -113,7 +113,7 @@ function BuildPage() {
   return (
     <>
       <PageHead
-        eyebrow="Division 02 · Build"
+        eyebrow="Service 02 · Build"
         title={<span className="whitespace-nowrap">Five packages, named for their weight.</span>}
         sub="Each package is a defined shape with defined boundaries. Scope, deliverables, timeline, and starting price are stated plainly."
       />
