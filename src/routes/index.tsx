@@ -63,9 +63,11 @@ function SoAtomicLogo({ className = "", alt = "SoAtomic" }: { className?: string
 /* ---------- Nav ---------- */
 function Nav() {
   const links = [
-    { href: "#services", label: "Services" },
-    { href: "#sizes", label: "Builds" },
-    { href: "#process", label: "Process" },
+    { href: "#screen", label: "Screen" },
+    { href: "#build", label: "Build" },
+    { href: "#care", label: "Care" },
+    { href: "#growth", label: "Growth" },
+    { href: "#playbook", label: "Playbook" },
     { href: "#contact", label: "Contact" },
   ];
   return (
@@ -108,34 +110,37 @@ function Hero() {
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
           <h1 className="text-4xl md:text-6xl font-semibold leading-[1.15] text-foreground">
-            Small Business Websites,<br />
-            Built From The <span className="text-accent-yellow">Atoms</span> Up.
+            A boutique digital workshop.<br />
+            Foundations you <span className="text-accent-yellow">actually own</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Not a DIY template. Not a bloated agency. SoAtomic screens, builds,
-            cares for, grows, and automates the digital presence of small
-            businesses that need clarity — and want to actually understand their
-            own website.
+            SoAtomic helps small organizations build digital foundations they
+            actually own — websites, workspaces, domains, and the quiet
+            plumbing behind them. We screen what exists, build what is needed,
+            care for it over time, and grow it steadily. No lock-in. No
+            mystery. By design, we accept only about ten clients a year.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#contact">
               <Button size="lg" className="mech-btn font-semibold glow-ring">
-                Book an Atomic Screen <ArrowRight />
+                Book a Screen <ArrowRight />
               </Button>
             </a>
-            <a href="#services">
+            <a href="#playbook">
               <Button size="lg" variant="outline" className="rounded-full border-border bg-card/40 hover:bg-card">
-                View Services
+                Read the Playbook
               </Button>
             </a>
           </div>
-          <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
+          <div className="mt-10 grid grid-cols-4 gap-4 max-w-md">
             {[
               { k: "01", v: "Screen" },
               { k: "02", v: "Build" },
-              { k: "03", v: "Grow" },
+              { k: "03", v: "Care" },
+              { k: "04", v: "Grow" },
             ].map(s => (
               <div key={s.k} className="border-l border-border pl-3">
+                <div className="font-mono-soa text-primary" style={{ fontSize: "0.8rem" }}>{s.k}</div>
                 <div className="text-sm font-semibold">{s.v}</div>
               </div>
             ))}
