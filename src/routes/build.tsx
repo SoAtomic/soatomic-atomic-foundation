@@ -34,7 +34,7 @@ const PACKAGES = [
     timeline: "1–2 weeks",
   },
   {
-    sym: "C", num: "02", name: "Carbon", price: "$1,500",
+    sym: "C", num: "02", name: "Carbon", price: "$800",
     forWho: "Small organizations needing a complete website.",
     body: "A small structured site — the standard shape for a service organization that needs to be understood before it is contacted.",
     includes: [
@@ -52,7 +52,7 @@ const PACKAGES = [
     timeline: "2–4 weeks",
   },
   {
-    sym: "Ti", num: "03", name: "Titanium", price: "$3,000",
+    sym: "Ti", num: "03", name: "Titanium", price: "$1,200",
     forWho: "Organizations managing content regularly.",
     body: "A content system the client operates — editable pages, clear roles, and documentation that explains each moving part.",
     includes: [
@@ -72,7 +72,7 @@ const PACKAGES = [
     timeline: "4–6 weeks",
   },
   {
-    sym: "Au", num: "04", name: "Gold", price: "$5,000",
+    sym: "Au", num: "04", name: "Gold", price: "$1,700",
     forWho: "Organizations selling products online.",
     body: "A commerce-capable foundation on Shopify, with the small pieces that make a shop routinely operable.",
     includes: [
@@ -91,7 +91,7 @@ const PACKAGES = [
     note: "We configure and hand off the store. Ongoing merchandising is not included.",
   },
   {
-    sym: "Pu", num: "05", name: "Plutonium", price: "$2,500",
+    sym: "Pu", num: "05", name: "Plutonium", price: "$2,000",
     forWho: "Organizations needing Google Cloud infrastructure or a custom web application.",
     body: "Cloud architecture and small custom applications on Google Cloud, with the operational documentation to run them.",
     includes: [
