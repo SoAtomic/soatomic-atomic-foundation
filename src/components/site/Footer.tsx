@@ -57,8 +57,12 @@ export function Footer() {
                 <Link to={l.to} className="hover:text-foreground">{l.label}</Link>
               </li>
             ))}
-            <li><span className="text-muted-foreground">Accessibility</span></li>
-            <li><span className="text-muted-foreground">Privacy</span></li>
+            <li>
+              <Link to="/accessibility" className="hover:text-foreground">Accessibility</Link>
+            </li>
+            <li>
+              <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
+            </li>
           </ul>
         </div>
         <div>
