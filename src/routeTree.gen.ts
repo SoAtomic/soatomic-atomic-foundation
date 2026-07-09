@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScreenRouteImport } from './routes/screen'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as GrowthRouteImport } from './routes/growth'
@@ -17,12 +18,18 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as BuildRouteImport } from './routes/build'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ScreenRoute = ScreenRouteImport.update({
   id: '/screen',
   path: '/screen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -60,6 +67,11 @@ const BuildRoute = BuildRouteImport.update({
   path: '/build',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -74,6 +86,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
@@ -81,11 +94,13 @@ export interface FileRoutesByFullPath {
   '/growth': typeof GrowthRoute
   '/playbook': typeof PlaybookRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/screen': typeof ScreenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
@@ -93,12 +108,14 @@ export interface FileRoutesByTo {
   '/growth': typeof GrowthRoute
   '/playbook': typeof PlaybookRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/screen': typeof ScreenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/build': typeof BuildRoute
   '/care': typeof CareRoute
   '/contact': typeof ContactRoute
@@ -106,6 +123,7 @@ export interface FileRoutesById {
   '/growth': typeof GrowthRoute
   '/playbook': typeof PlaybookRoute
   '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
   '/screen': typeof ScreenRoute
 }
 export interface FileRouteTypes {
@@ -113,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/build'
     | '/care'
     | '/contact'
@@ -120,11 +139,13 @@ export interface FileRouteTypes {
     | '/growth'
     | '/playbook'
     | '/pricing'
+    | '/privacy'
     | '/screen'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/build'
     | '/care'
     | '/contact'
@@ -132,11 +153,13 @@ export interface FileRouteTypes {
     | '/growth'
     | '/playbook'
     | '/pricing'
+    | '/privacy'
     | '/screen'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/accessibility'
     | '/build'
     | '/care'
     | '/contact'
@@ -144,12 +167,14 @@ export interface FileRouteTypes {
     | '/growth'
     | '/playbook'
     | '/pricing'
+    | '/privacy'
     | '/screen'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   BuildRoute: typeof BuildRoute
   CareRoute: typeof CareRoute
   ContactRoute: typeof ContactRoute
@@ -157,6 +182,7 @@ export interface RootRouteChildren {
   GrowthRoute: typeof GrowthRoute
   PlaybookRoute: typeof PlaybookRoute
   PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
   ScreenRoute: typeof ScreenRoute
 }
 
@@ -167,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/screen'
       fullPath: '/screen'
       preLoaderRoute: typeof ScreenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -218,6 +251,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BuildRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -238,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
   BuildRoute: BuildRoute,
   CareRoute: CareRoute,
   ContactRoute: ContactRoute,
@@ -245,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   GrowthRoute: GrowthRoute,
   PlaybookRoute: PlaybookRoute,
   PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
   ScreenRoute: ScreenRoute,
 }
 export const routeTree = rootRouteImport
