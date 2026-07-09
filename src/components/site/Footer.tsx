@@ -1,7 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { SoAtomicLogo } from "./Logo";
 
-const TOOLS = ["Google Workspace", "Google Cloud", "Cloudflare", "Webflow", "Framer", "Lovable"];
+const TOOLS = [
+  { label: "Google Workspace", href: "https://workspace.google.com/" },
+  { label: "Google Cloud", href: "https://cloud.google.com/" },
+  { label: "Cloudflare", href: "https://www.cloudflare.com/" },
+  { label: "Webflow", href: "https://webflow.com/" },
+  { label: "Framer", href: "https://www.framer.com/" },
+  { label: "Lovable", href: "https://lovable.dev/" },
+] as const;
 
 const STUDIO = [
   { to: "/playbook", label: "Playbook" },
@@ -57,7 +64,13 @@ export function Footer() {
         <div>
           <div className="font-mono-soa text-primary uppercase tracking-widest">Toolchain</div>
           <ul className="mt-3 space-y-2 text-muted-foreground">
-            {TOOLS.map((t) => <li key={t}>{t}</li>)}
+            {TOOLS.map((t) => (
+              <li key={t.label}>
+                <a href={t.href} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                  {t.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         </div>
