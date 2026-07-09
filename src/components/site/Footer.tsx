@@ -20,8 +20,8 @@ const SERVICES = [
 export function Footer() {
   return (
     <footer className="border-t border-border/60 py-16 mt-8">
-      <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-4 gap-3">
-        <div className="md:col-span-1 flex flex-col items-start gap-8">
+      <div className="mx-auto max-w-7xl px-6 flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-x-16">
+        <div className="flex flex-col items-start gap-5 md:w-[360px] md:shrink-0">
           <SoAtomicLogo className="h-[4rem] w-auto" />
           <div className="font-mono-soa text-primary uppercase tracking-widest">
             SoAtomic Digital Studio
@@ -31,6 +31,7 @@ export function Footer() {
             hello@soatomic.com
           </a>
         </div>
+        <div className="flex flex-col gap-10 sm:flex-row sm:gap-10 md:gap-12 lg:gap-14">
         <div>
           <div className="font-mono-soa text-primary uppercase tracking-widest">Services</div>
           <ul className="mt-3 space-y-2 text-muted-foreground">
@@ -58,6 +59,7 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-muted-foreground">
             {TOOLS.map((t) => <li key={t}>{t}</li>)}
           </ul>
+        </div>
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-6 mt-10 pt-6 border-t border-border/60 flex flex-wrap justify-between gap-3 text-muted-foreground">
