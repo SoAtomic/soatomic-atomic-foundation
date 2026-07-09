@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHead, H2 } from "@/components/site/SectionHeader";
-import { SoAtomicLogo } from "@/components/site/Logo";
+import aaronPortrait from "@/assets/aaron-portrait.png.asset.json";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { Check, X } from "lucide-react";
 
@@ -74,9 +74,11 @@ function AboutPage() {
 
       <section className="py-20 border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <div className="mx-auto h-16 w-16 bg-card glow-ring grid place-items-center">
-            <SoAtomicLogo className="h-10 w-auto" />
-          </div>
+          <img
+            src={aaronPortrait.url}
+            alt="Aaron"
+            className="mx-auto h-[100px] w-[100px] object-cover rounded-full"
+          />
           <h2 className="mt-6 text-3xl md:text-4xl font-semibold">The studio owner.</h2>
           <div className="mx-auto mt-6 max-w-3xl space-y-4 text-lg text-muted-foreground text-left md:text-center">
             <p>
