@@ -173,8 +173,8 @@ function PlaybookPage() {
 
       <section className="py-20 border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6">
-          <H2 eyebrow="Process" sub="Six connected stages describe how a project moves through the studio.">
-            Screen → Blueprint → Build → Launch → Care → Grow.
+          <H2 eyebrow="Process" sub="Six connected stages describe how a project moves through the studio." className="max-w-none">
+            <span className="whitespace-nowrap">Screen → Blueprint → Build → Launch → Care → Grow.</span>
           </H2>
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
