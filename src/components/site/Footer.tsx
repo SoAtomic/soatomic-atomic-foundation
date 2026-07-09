@@ -20,8 +20,8 @@ const SERVICES = [
 export function Footer() {
   return (
     <footer className="border-t border-border/60 py-16 mt-8">
-      <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-4 gap-3">
-        <div className="md:col-span-1 flex flex-col items-start gap-8">
+      <div className="mx-auto max-w-7xl px-6 flex flex-col gap-12 md:grid md:[grid-template-columns:minmax(340px,380px)_auto_auto_auto] md:gap-x-12 lg:gap-x-24 md:justify-between">
+        <div className="flex flex-col items-start gap-5">
           <SoAtomicLogo className="h-[4rem] w-auto" />
           <div className="font-mono-soa text-primary uppercase tracking-widest">
             SoAtomic Digital Studio
@@ -31,7 +31,7 @@ export function Footer() {
             hello@soatomic.com
           </a>
         </div>
-        <div>
+        <div className="md:pl-8 lg:pl-16">
           <div className="font-mono-soa text-primary uppercase tracking-widest">Services</div>
           <ul className="mt-3 space-y-2 text-muted-foreground">
             {SERVICES.map((l) => (
