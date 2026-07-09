@@ -31,13 +31,15 @@ export function H2({
   eyebrow,
   children,
   sub,
+  className,
 }: {
   eyebrow?: string;
   children: React.ReactNode;
   sub?: string;
+  className?: string;
 }) {
   return (
-    <div className="max-w-3xl">
+    <div className={className ? className : "max-w-3xl"}>
       {eyebrow && (
         <div className="font-mono-soa text-primary uppercase tracking-widest mb-3">
           {eyebrow}
