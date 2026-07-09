@@ -45,7 +45,7 @@ export function H2({
           {eyebrow}
         </div>
       )}
-      <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight whitespace-nowrap">
+      <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
         {children}
       </h2>
       {sub && <p className="mt-4 text-muted-foreground text-lg">{sub}</p>}
