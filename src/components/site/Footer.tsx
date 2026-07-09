@@ -21,12 +21,12 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 py-16 mt-8">
       <div className="mx-auto max-w-7xl px-6 flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-x-16">
-        <div className="flex flex-col items-start gap-5 md:w-[360px] md:shrink-0">
-          <SoAtomicLogo className="h-[4rem] w-auto" />
-          <div className="font-mono-soa text-primary uppercase tracking-widest">
+        <div className="flex flex-col items-start md:w-[360px] md:shrink-0">
+          <SoAtomicLogo className="h-[4rem] w-auto mb-4" />
+          <div className="font-mono-soa text-primary uppercase tracking-widest mb-3">
             SoAtomic Digital Studio
           </div>
-          <div className="text-muted-foreground">Santa Cruz County, California</div>
+          <div className="text-muted-foreground mb-3">Santa Cruz County, California</div>
           <a href="mailto:hello@soatomic.com" className="text-foreground hover:text-primary">
             hello@soatomic.com
           </a>
