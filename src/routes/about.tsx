@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHead, H2 } from "@/components/site/SectionHeader";
-import { SoAtomicLogo } from "@/components/site/Logo";
+import aaronPortrait from "@/assets/aaron-portrait.png.asset.json";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { Check, X } from "lucide-react";
 
