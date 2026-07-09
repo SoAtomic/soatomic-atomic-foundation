@@ -82,7 +82,7 @@ function AboutPage() {
           <h2 className="mt-6 text-3xl md:text-4xl font-semibold">The studio owner.</h2>
           <div className="mx-auto mt-6 max-w-3xl space-y-4 text-lg text-muted-foreground text-left md:text-center">
             <p>
-              SoAtomic is run by Aaron — a builder who spent years on both the
+              SoAtomic is run by Aaron Keuper — a builder who spent years on both the
               creative side of the web and the operational side of the
               systems behind it.
             </p>
