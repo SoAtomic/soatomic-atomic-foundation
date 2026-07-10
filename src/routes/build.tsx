@@ -7,9 +7,9 @@ export const Route = createFileRoute("/build")({
   head: () => ({
     meta: [
       { title: "Build — SoAtomic" },
-      { name: "description", content: "Five right-sized build packages, from a one-page website to Google Cloud infrastructure. Every package includes documentation, training, and full client ownership." },
+      { name: "description", content: "Eight right-sized build packages — from a one-page website to communications strategy, creative identity, and Google Cloud infrastructure. Every package includes documentation, training, and full client ownership." },
       { property: "og:title", content: "Build — SoAtomic" },
-      { property: "og:description", content: "Hydrogen, Carbon, Titanium, Gold, Plutonium — five defined packages with defined boundaries and transparent pricing." },
+      { property: "og:description", content: "Hydrogen, Carbon, Nitrogen, Oxygen, Neon, Titanium, Gold, Plutonium — eight defined packages with defined boundaries and transparent pricing." },
     ],
   }),
   component: BuildPage,

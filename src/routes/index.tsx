@@ -91,7 +91,7 @@ function Services() {
     { to: "/screen", icon: Search,     num: "01", title: "Screen",
       body: "A written, prioritized review of what already exists — before anything is proposed or built." },
     { to: "/build", icon: Hammer,      num: "02", title: "Build",
-      body: "Five right-sized packages, from a one-page site to a full cloud application, with defined boundaries." },
+      body: "Eight right-sized packages — websites, communications strategy, creative identity, commerce, and cloud infrastructure — each with defined boundaries." },
     { to: "/care", icon: HeartPulse,   num: "03", title: "Care",
       body: "Monthly plans that keep sites, workspaces, and infrastructure healthy after launch." },
     { to: "/growth", icon: TrendingUp, num: "04", title: "Growth",
