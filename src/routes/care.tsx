@@ -7,7 +7,7 @@ export const Route = createFileRoute("/care")({
   head: () => ({
     meta: [
       { title: "Care — SoAtomic" },
-      { name: "description", content: "Monthly care plans that keep websites, workspaces, and infrastructure healthy after launch. Five plans matched to the five build packages." },
+      { name: "description", content: "Monthly care plans that keep websites, workspaces, and infrastructure healthy after launch. Plans matched to the Hydrogen, Carbon, Titanium, Gold, and Plutonium build packages." },
       { property: "og:title", content: "Care — SoAtomic" },
       { property: "og:description", content: "Monthly studio care — updates, monitoring, documentation, and a real person who already knows your setup." },
     ],
