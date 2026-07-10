@@ -31,6 +31,27 @@ const BUILDS = [
     next: "Book a Digital Foundation Audit.",
   },
   {
+    name: "Nitrogen", price: "$900", timeline: "2–4 weeks",
+    best: "Communications strategy before creative work or technology.",
+    included: ["Communications audit", "Audience strategy", "Messaging framework", "Brand voice guide", "Communications roadmap", "Campaign strategy", "Editorial calendar", "KPI framework", "Communications playbook"],
+    excluded: ["Creative production", "Platform implementation"],
+    next: "Book a Digital Foundation Audit.",
+  },
+  {
+    name: "Oxygen", price: "$1,100", timeline: "3–5 weeks",
+    best: "Turning strategy into documented, repeatable communications systems.",
+    included: ["Social media systems", "Editorial systems", "Analytics & reporting", "Digital asset management", "Email systems", "Automation & platform integration", "Campaign operations", "Communications playbook"],
+    excluded: ["Long-term content creation", "Managed posting services"],
+    next: "Book a Digital Foundation Audit.",
+  },
+  {
+    name: "Neon", price: "$1,000", timeline: "3–5 weeks",
+    best: "A durable visual identity and a library of reusable creative assets.",
+    included: ["Logo system", "Brand guidelines", "Typography & color palette", "Canva & social templates", "Print collateral", "Campaign assets", "Presentation decks", "Custom illustrations"],
+    excluded: ["Ongoing creative production", "Advertising media buys"],
+    next: "Book a Digital Foundation Audit.",
+  },
+  {
     name: "Titanium", price: "$1,200", timeline: "4–6 weeks",
     best: "An organization publishing content regularly.",
     included: ["Up to 10 pages", "CMS collections", "Blog or news", "Staff directory", "Search", "SEO configuration", "Documentation", "Administrator training"],
