@@ -174,7 +174,7 @@ function BuildPage() {
     <>
       <PageHead
         eyebrow="Service 02 · Build"
-        title={<span className="whitespace-nowrap">Five packages, named for their weight.</span>}
+        title={<span className="whitespace-nowrap">Eight packages, named for their weight.</span>}
         sub="Each package is a defined shape with defined boundaries. Scope, deliverables, timeline, and starting price are stated plainly."
       />
       <section className="py-20">
@@ -189,6 +189,9 @@ function BuildPage() {
                   </span>
                 </div>
                 <h2 className="mt-4 text-2xl font-semibold text-foreground">{p.name}</h2>
+                {"subtitle" in p && p.subtitle && (
+                  <div className="mt-1 text-muted-foreground">{p.subtitle}</div>
+                )}
                 <div className="mt-2 font-mono-soa text-primary uppercase tracking-widest">
                   Starting at {p.price}
                 </div>
