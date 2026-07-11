@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScreenRouteImport } from './routes/screen'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as GrowthRouteImport } from './routes/growth'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -30,11 +29,6 @@ const ScreenRoute = ScreenRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlaybookRoute = PlaybookRouteImport.update({
@@ -93,7 +87,6 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/playbook': typeof PlaybookRoute
-  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/screen': typeof ScreenRoute
 }
@@ -107,7 +100,6 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/playbook': typeof PlaybookRoute
-  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/screen': typeof ScreenRoute
 }
@@ -122,7 +114,6 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/growth': typeof GrowthRoute
   '/playbook': typeof PlaybookRoute
-  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/screen': typeof ScreenRoute
 }
@@ -138,7 +129,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/growth'
     | '/playbook'
-    | '/pricing'
     | '/privacy'
     | '/screen'
   fileRoutesByTo: FileRoutesByTo
@@ -152,7 +142,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/growth'
     | '/playbook'
-    | '/pricing'
     | '/privacy'
     | '/screen'
   id:
@@ -166,7 +155,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/growth'
     | '/playbook'
-    | '/pricing'
     | '/privacy'
     | '/screen'
   fileRoutesById: FileRoutesById
@@ -181,7 +169,6 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GrowthRoute: typeof GrowthRoute
   PlaybookRoute: typeof PlaybookRoute
-  PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
   ScreenRoute: typeof ScreenRoute
 }
@@ -200,13 +187,6 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/playbook': {
@@ -285,7 +265,6 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GrowthRoute: GrowthRoute,
   PlaybookRoute: PlaybookRoute,
-  PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
   ScreenRoute: ScreenRoute,
 }
