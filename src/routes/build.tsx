@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, Server, MessageSquare } from "lucide-react";
 import { PageHead } from "@/components/site/SectionHeader";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
@@ -7,9 +7,9 @@ export const Route = createFileRoute("/build")({
   head: () => ({
     meta: [
       { title: "Build — SoAtomic" },
-      { name: "description", content: "Eight right-sized build packages — from a one-page website to communications strategy, creative identity, and Google Cloud infrastructure. Every package includes documentation, training, and full client ownership." },
+      { name: "description", content: "Build turns Screen recommendations into working systems. Two divisions: Digital Infrastructure (Hydrogen, Carbon, Titanium, Gold, Plutonium) and Communications Infrastructure (Nitrogen, Oxygen, Neon). Every package includes documentation, training, and full client ownership." },
       { property: "og:title", content: "Build — SoAtomic" },
-      { property: "og:description", content: "Hydrogen, Carbon, Nitrogen, Oxygen, Neon, Titanium, Gold, Plutonium — eight defined packages with defined boundaries and transparent pricing." },
+      { property: "og:description", content: "Two divisions — Digital Infrastructure and Communications Infrastructure — with eight defined packages, transparent pricing, and full client ownership." },
     ],
   }),
   component: BuildPage,
