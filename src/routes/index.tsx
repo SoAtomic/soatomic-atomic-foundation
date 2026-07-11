@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Check, BookOpen } from "lucide-react";
+import { ArrowRight, Search, Hammer, HeartPulse, TrendingUp, Check, BookOpen, Server, MessageSquare } from "lucide-react";
 import { HeroOrbit } from "@/components/site/HeroOrbit";
 import { Ticker } from "@/components/site/Ticker";
 import { H2 } from "@/components/site/SectionHeader";
@@ -9,10 +9,10 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SoAtomic — Digital Foundations Built to Last" },
-      { name: "description", content: "SoAtomic is a boutique digital studio that helps nonprofits, community organizations, and service businesses build digital foundations they fully own and understand." },
-      { property: "og:title", content: "SoAtomic — Digital Foundations Built to Last" },
-      { property: "og:description", content: "A small studio that builds documented, maintainable digital foundations for organizations doing meaningful work. Clients own everything." },
+      { title: "SoAtomic — We Evaluate. We Build. We Maintain. We Improve." },
+      { name: "description", content: "SoAtomic is a boutique digital studio that builds Digital Infrastructure and Communications Infrastructure for organizations doing meaningful work. Every engagement follows one lifecycle: Screen, Build, Care, Growth." },
+      { property: "og:title", content: "SoAtomic — Digital and Communications Infrastructure, Built to Last" },
+      { property: "og:description", content: "One methodology, two disciplines. We evaluate, build, maintain, and improve the systems organizations depend on. Clients own everything." },
     ],
   }),
   component: Home,
@@ -23,6 +23,7 @@ function Home() {
     <>
       <Hero />
       <Ticker />
+      <JourneyDiagram />
       <Services />
       <EveryProject />
       <WhoWeServe />
@@ -49,16 +50,17 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-7">
           <div className="font-mono-soa text-primary uppercase tracking-widest mb-4">
-            A boutique digital studio
+            A boutique digital studio · We Evaluate. We Build. We Maintain. We Improve.
           </div>
           <h1 className="text-4xl md:text-6xl font-semibold leading-[1.1] text-foreground">
-            Digital Foundations Built to Last.
+            Infrastructure built to last, for the work that matters.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            SoAtomic helps nonprofits, community organizations, and service
-            businesses build digital systems they fully own and understand.
-            Every project is documented, maintainable, and designed for
-            long-term success.
+            SoAtomic builds Digital Infrastructure and Communications
+            Infrastructure for nonprofits, community organizations, and
+            service businesses. Every engagement follows one methodology —
+            evaluate, build, maintain, improve — so complexity becomes
+            reliability, and reliability becomes confidence.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact">
@@ -85,17 +87,96 @@ function Hero() {
   );
 }
 
+/* ---------- Customer journey diagram ---------- */
+function JourneyDiagram() {
+  return (
+    <section className="py-24 border-t border-border/60">
+      <div className="mx-auto max-w-7xl px-6">
+        <H2
+          eyebrow="The customer journey"
+          sub="One methodology, four stages, two disciplines. Whether the work is Digital Infrastructure or Communications Infrastructure, the lifecycle is the same."
+        >
+          Evaluate. Build. Maintain. Improve.
+        </H2>
+
+        <div className="mt-12 grid gap-4">
+          {/* Stage 01 — Screen */}
+          <StageRow n="01" title="Screen" body="We evaluate what already exists and produce a written, prioritized assessment. No implementation." />
+
+          {/* Stage 02 — Build (two divisions) */}
+          <div className="crt-card p-6 md:p-8">
+            <div className="flex items-center gap-3">
+              <span className="font-mono-soa text-primary uppercase tracking-widest">02</span>
+              <span className="h-px flex-1 bg-border" />
+              <Hammer className="h-4 w-4 text-primary" />
+            </div>
+            <div className="mt-3 flex items-baseline gap-3 flex-wrap">
+              <h3 className="text-2xl font-semibold text-foreground">Build</h3>
+              <span className="text-muted-foreground">— two divisions run in parallel.</span>
+            </div>
+            <div className="mt-6 grid md:grid-cols-2 gap-4">
+              <Link to="/build" className="atomic-card p-5 flex flex-col group hover:border-primary/60 transition-colors">
+                <div className="flex items-center gap-2">
+                  <Server className="h-4 w-4 text-primary" />
+                  <div className="font-mono-soa text-primary uppercase tracking-widest">Digital Infrastructure</div>
+                </div>
+                <p className="mt-3 text-muted-foreground">Websites, content platforms, commerce, and cloud.</p>
+                <div className="mt-4 flex flex-wrap gap-2 font-mono-soa uppercase tracking-widest text-foreground/80">
+                  {["Hydrogen","Carbon","Titanium","Gold","Plutonium"].map((n) => (
+                    <span key={n} className="border border-border px-2 py-1">{n}</span>
+                  ))}
+                </div>
+              </Link>
+              <Link to="/build" className="atomic-card p-5 flex flex-col group hover:border-primary/60 transition-colors">
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4 text-primary" />
+                  <div className="font-mono-soa text-primary uppercase tracking-widest">Communications Infrastructure</div>
+                </div>
+                <p className="mt-3 text-muted-foreground">Messaging strategy, operational systems, and creative assets.</p>
+                <div className="mt-4 flex flex-wrap gap-2 font-mono-soa uppercase tracking-widest text-foreground/80">
+                  {["Nitrogen","Oxygen","Neon"].map((n) => (
+                    <span key={n} className="border border-border px-2 py-1">{n}</span>
+                  ))}
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          <StageRow n="03" title="Care" body="Monthly attention that keeps what we built healthy — updates, monitoring, documentation." />
+          <StageRow n="04" title="Growth" body="Continuous improvement — optimization, expansion, automation, long-term partnership." />
+        </div>
+
+        <p className="mt-8 text-muted-foreground">
+          Every Screen credits toward its corresponding Build. Nothing is bundled that you did not agree to.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function StageRow({ n, title, body }: { n: string; title: string; body: string }) {
+  return (
+    <div className="crt-card p-6 md:p-8 grid md:grid-cols-12 gap-4 items-center">
+      <div className="md:col-span-3 flex items-center gap-3">
+        <span className="font-mono-soa text-primary uppercase tracking-widest">{n}</span>
+        <h3 className="text-2xl font-semibold text-foreground">{title}</h3>
+      </div>
+      <p className="md:col-span-9 text-muted-foreground">{body}</p>
+    </div>
+  );
+}
+
 /* ---------- Four studio services ---------- */
 function Services() {
   const divs = [
     { to: "/screen", icon: Search,     num: "01", title: "Screen",
-      body: "A written, prioritized review of what already exists — before anything is proposed or built." },
+      body: "Two written assessments — Foundations for digital infrastructure and Communications for messaging and content. No implementation." },
     { to: "/build", icon: Hammer,      num: "02", title: "Build",
-      body: "Eight right-sized packages — websites, communications strategy, creative identity, commerce, and cloud infrastructure — each with defined boundaries." },
+      body: "Two divisions, eight packages. Digital Infrastructure (Hydrogen → Plutonium) and Communications Infrastructure (Nitrogen, Oxygen, Neon)." },
     { to: "/care", icon: HeartPulse,   num: "03", title: "Care",
-      body: "Monthly plans that keep sites, workspaces, and infrastructure healthy after launch." },
+      body: "Monthly plans that keep the systems we built healthy after launch — updates, monitoring, documentation." },
     { to: "/growth", icon: TrendingUp, num: "04", title: "Growth",
-      body: "Steady, measurable improvement over time — accessibility, SEO, automation, and AI where it belongs." },
+      body: "Continuous improvement over time — accessibility, SEO, automation, and AI where it belongs." },
   ] as const;
   return (
     <section className="py-24 border-t border-border/60">
