@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, Server, MessageSquare } from "lucide-react";
 import { PageHead } from "@/components/site/SectionHeader";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
@@ -7,9 +7,9 @@ export const Route = createFileRoute("/build")({
   head: () => ({
     meta: [
       { title: "Build — SoAtomic" },
-      { name: "description", content: "Eight right-sized build packages — from a one-page website to communications strategy, creative identity, and Google Cloud infrastructure. Every package includes documentation, training, and full client ownership." },
+      { name: "description", content: "Build turns Screen recommendations into working systems. Two divisions: Digital Infrastructure (Hydrogen, Carbon, Titanium, Gold, Plutonium) and Communications Infrastructure (Nitrogen, Oxygen, Neon). Every package includes documentation, training, and full client ownership." },
       { property: "og:title", content: "Build — SoAtomic" },
-      { property: "og:description", content: "Hydrogen, Carbon, Nitrogen, Oxygen, Neon, Titanium, Gold, Plutonium — eight defined packages with defined boundaries and transparent pricing." },
+      { property: "og:description", content: "Two divisions — Digital Infrastructure and Communications Infrastructure — with eight defined packages, transparent pricing, and full client ownership." },
     ],
   }),
   component: BuildPage,
@@ -170,17 +170,77 @@ const PACKAGES = [
 ];
 
 function BuildPage() {
+  const digital = PACKAGES.filter((p) => ["Hydrogen", "Carbon", "Titanium", "Gold", "Plutonium"].includes(p.name));
+  const comms = PACKAGES.filter((p) => ["Nitrogen", "Oxygen", "Neon"].includes(p.name));
   return (
     <>
       <PageHead
         eyebrow="Service 02 · Build"
-        title={<span className="whitespace-nowrap">Eight packages, named for their weight.</span>}
-        sub="Each package is a defined shape with defined boundaries. Scope, deliverables, timeline, and starting price are stated plainly."
+        title={<span className="whitespace-nowrap">Two divisions. Eight packages.</span>}
+        sub="Build turns Screen recommendations into working systems. Two divisions run in parallel: Digital Infrastructure and Communications Infrastructure. Each package is a defined shape with defined boundaries — scope, deliverables, timeline, and starting price stated plainly."
       />
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 space-y-6">
-          {PACKAGES.map((p) => (
-            <article key={p.name} className="crt-card p-6 md:p-8 grid md:grid-cols-12 gap-6">
+
+      {/* Digital Infrastructure */}
+      <section className="pt-20 pb-10">
+        <div className="mx-auto max-w-7xl px-6">
+          <DivisionHeader
+            icon={<Server className="h-5 w-5 text-primary" />}
+            eyebrow="Division A"
+            title="Digital Infrastructure"
+            body="The systems an organization operates on: websites, content platforms, commerce, and cloud. These packages implement recommendations from a Foundations Screen."
+          />
+          <div className="mt-10 space-y-6">
+            {digital.map((p) => <PackageCard key={p.name} p={p} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* Communications Infrastructure */}
+      <section className="pt-10 pb-20 border-t border-border/60">
+        <div className="mx-auto max-w-7xl px-6">
+          <DivisionHeader
+            icon={<MessageSquare className="h-5 w-5 text-primary" />}
+            eyebrow="Division B"
+            title="Communications Infrastructure"
+            body="The systems an organization communicates with: strategy, operational systems, and creative assets. These packages implement recommendations from a Communications Screen."
+          />
+          <div className="mt-10 space-y-6">
+            {comms.map((p) => <PackageCard key={p.name} p={p} />)}
+          </div>
+          <p className="mt-10 text-muted-foreground">
+            Every engagement starts with a Screen so the right package is chosen for the work at hand — never sold up. The cost of the Screen is credited toward the corresponding Build.
+          </p>
+        </div>
+      </section>
+
+      <CtaBanner
+        title="Start with a Blueprint."
+        body="Once a Screen is complete, the next step is a written Blueprint that describes exactly what will be built and what it will not include."
+        primaryLabel="Start with a Blueprint"
+      />
+    </>
+  );
+}
+
+function DivisionHeader({ icon, eyebrow, title, body }: { icon: React.ReactNode; eyebrow: string; title: string; body: string }) {
+  return (
+    <div className="grid md:grid-cols-12 gap-6 items-start">
+      <div className="md:col-span-4">
+        <div className="flex items-center gap-3 font-mono-soa text-primary uppercase tracking-widest">
+          {icon}
+          <span>{eyebrow}</span>
+        </div>
+        <h2 className="mt-3 text-3xl font-semibold text-foreground">{title}</h2>
+      </div>
+      <p className="md:col-span-8 text-muted-foreground text-lg">{body}</p>
+    </div>
+  );
+}
+
+type Package = typeof PACKAGES[number];
+function PackageCard({ p }: { p: Package }) {
+  return (
+    <article className="crt-card p-6 md:p-8 grid md:grid-cols-12 gap-6">
               <div className="md:col-span-3">
                 <div className="element-tile h-24 w-24" aria-hidden>
                   <span className="absolute left-1.5 top-1 font-mono-soa text-primary">{p.num}</span>
@@ -214,18 +274,6 @@ function BuildPage() {
                   <p className="mt-6 pt-4 border-t border-border/60 text-accent-orange">{p.note}</p>
                 )}
               </div>
-            </article>
-          ))}
-          <p className="text-muted-foreground whitespace-nowrap">
-            Every engagement starts with a Screen so the right package is chosen for the work at hand — never sold up.
-          </p>
-        </div>
-      </section>
-      <CtaBanner
-        title="Start with a Blueprint."
-        body="Once a Screen is complete, the next step is a written Blueprint that describes exactly what will be built and what it will not include."
-        primaryLabel="Start with a Blueprint"
-      />
-    </>
+    </article>
   );
 }
